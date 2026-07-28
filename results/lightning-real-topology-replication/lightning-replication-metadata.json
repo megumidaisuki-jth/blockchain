@@ -1,0 +1,26 @@
+{
+  "artifact_kind": "real-topology-stopping-time-replication",
+  "claim_boundary": "real topology, synthetic demand; finite-grid evidence only",
+  "repetitions_per_cell": 20000,
+  "block_size": 500,
+  "block_count_per_cell": 40,
+  "comparisons": 48,
+  "cell_count": 48,
+  "unique_seed_count": 48,
+  "checkpoint_hits": 0,
+  "censored_count": 0,
+  "maximum_block_ci_halfwidth": 0.03715827674193745,
+  "precision_target": 0.03,
+  "precision_gate_pass": false,
+  "maximum_cell_runtime_seconds": 228.84779010000057,
+  "sum_cell_runtime_seconds": 2322.0896417000004,
+  "wall_runtime_seconds": 2351.1804814999996,
+  "source_archive_sha256": "f380b71796edd86019ddc0b7822938559bfd40a2f650b21ccb66f14ef10e9320",
+  "software": {
+    "python": "3.10.16",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "networkx": "3.4.2",
+    "numba": "0.62.1"
+  }
+}

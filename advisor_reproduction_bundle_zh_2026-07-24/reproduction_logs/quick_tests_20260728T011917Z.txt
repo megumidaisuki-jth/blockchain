@@ -1,0 +1,22 @@
+test_drift_upper_bounds_hold_for_exact_small_chains (test_drift.DriftFormulaTests) ... ok
+test_k3_zero_bias_recovers_closed_form (test_drift.DriftFormulaTests) ... ok
+test_zero_bias_reduces_to_uniform_chain (test_drift.DriftFormulaTests) ... ok
+test_continuity_near_zero_drift (test_final_formula.FinalFormulaTests) ... ok
+test_k3_zero_drift_exact (test_final_formula.FinalFormulaTests) ... ok
+test_predictions_are_finite (test_final_formula.FinalFormulaTests) ... ok
+test_rigorous_bounds (test_final_formula.FinalFormulaTests) ... ok
+test_biased_formula_satisfies_poisson_recurrence (test_hyperedge.FormulaTests) ... ok
+test_closed_forms_are_recovered_by_markov_solver (test_hyperedge.FormulaTests) ... ok
+test_closed_forms_obey_rigorous_bounds (test_hyperedge.FormulaTests) ... ok
+test_positive_composition_count (test_hyperedge.FormulaTests) ... ok
+test_extrapolation_recovers_known_intercept (test_gaussian_discrete_bridge.GaussianDiscreteBridgeTests) ... ok
+test_increment_moments_match_theory (test_gaussian_discrete_bridge.GaussianDiscreteBridgeTests) ... ok
+test_independent_brownian_series_is_stable (test_gaussian_discrete_bridge.GaussianDiscreteBridgeTests) ... ok
+test_n1_exact_sign_reversal (test_gaussian_discrete_bridge.GaussianDiscreteBridgeTests) ... ok
+test_n2_difference_is_positive (test_gaussian_discrete_bridge.GaussianDiscreteBridgeTests) ... ok
+test_published_artifacts_and_manifest_are_consistent (test_gaussian_discrete_bridge.GaussianDiscreteBridgeTests) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 10.280s
+
+OK

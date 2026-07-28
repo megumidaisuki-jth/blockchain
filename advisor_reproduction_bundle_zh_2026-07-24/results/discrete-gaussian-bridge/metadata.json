@@ -1,0 +1,73 @@
+{
+  "pipeline_version": "1",
+  "design": "three-node path; uniform ordered-pair atomic routes; balanced binary channels",
+  "scales": [
+    1,
+    2,
+    4,
+    8,
+    16,
+    32,
+    64,
+    128,
+    256
+  ],
+  "sampling": "none; deterministic sparse Poisson solve",
+  "correlated_increment_mean": [
+    0.0,
+    0.0
+  ],
+  "proxy_increment_mean": [
+    0.0,
+    0.0
+  ],
+  "correlated_covariance": [
+    [
+      0.6666666666666666,
+      0.3333333333333333
+    ],
+    [
+      0.3333333333333333,
+      0.6666666666666666
+    ]
+  ],
+  "proxy_covariance": [
+    [
+      0.6666666666666667,
+      0.0
+    ],
+    [
+      0.0,
+      0.6666666666666667
+    ]
+  ],
+  "correlated_limit_extrapolation": 0.9332361050440836,
+  "correlated_limit_window16": 0.9332360588768516,
+  "correlated_extrapolation_window_sensitivity": 4.616723203731965e-08,
+  "proxy_limit_extrapolation": 0.8840562393775144,
+  "proxy_limit_window16": 0.8840562393891437,
+  "independent_brownian_analytic_mean": 0.8840562393751427,
+  "analytic_series_2000_terms": 0.8840562393539786,
+  "analytic_series_truncation_discrepancy": 2.1164070496126897e-11,
+  "gaussian_limit_difference_estimate": 0.04917986566894095,
+  "largest_linear_system_residual": 1.0550138540565968e-10,
+  "finite_sign_reversal_at_n1": -0.125,
+  "gates": {
+    "n1_correlated_mean_exact": true,
+    "n1_proxy_mean_exact": true,
+    "all_linear_residuals_below_2e_9": true,
+    "analytic_series_stable_below_3e_10": true,
+    "proxy_extrapolation_matches_analytic_below_5e_8": true,
+    "all_scales_from_n2_have_positive_difference": true,
+    "limiting_difference_positive": true,
+    "extrapolation_window_sensitivity_below_1e_6": true
+  },
+  "all_gates_pass": true,
+  "runtime": {
+    "python": "3.10.16",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "matplotlib": "3.10.8"
+  },
+  "claim_boundary": "deterministic convergence diagnostic; theorem proof does not rely on this finite grid; no universal finite-N sign claim"
+}

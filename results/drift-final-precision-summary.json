@@ -1,0 +1,12 @@
+{
+  "target_count": 18,
+  "max_pooled_point_error": 0.03750031088847638,
+  "fraction_pooled_simultaneous_upper_within_05": 1.0,
+  "max_pooled_uncertainty_aware_error_upper": 0.046404247030817136,
+  "global_simultaneous_z_for_1728": 4.181688786811744,
+  "run_id": "precision-v1-33e29d850101",
+  "formula_sha256": "fc6ed5692c5e33a9fffe770a3a11e12d0b94dbf5a1eec4c0ae7c81aee87c07d7",
+  "validator_sha256": "49bc43e6fa248fed55e06405acd9658e21b28e031b0e09c93610c8b1fe1f514f",
+  "source_results_sha256": "aeebc03cb1db7d38ad76a14aea3bf9ce1eac9085b67b69b341a6b11d7ba2db9c",
+  "grid_sha256": "33e29d850101cabbcdbdbc05a99ea4b00e4c70459e07891c02b06222e777343d"
+}

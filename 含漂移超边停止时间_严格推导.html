@@ -1,0 +1,945 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>含漂移超边停止时间：严格推导</title><style>
+:root{--ink:#17202a;--line:#dfe5eb;--accent:#145da0;--soft:#f4f8fb}
+*{box-sizing:border-box}body{margin:0;background:#f5f7f9;color:var(--ink);font:16px/1.72 -apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",Arial,sans-serif}
+main{max-width:1080px;margin:32px auto;padding:48px 64px;background:#fff;box-shadow:0 10px 35px rgba(23,32,42,.08);border-radius:12px}
+h1{font-size:2.15rem;line-height:1.25;margin:0 0 1.4rem;color:#0f2740}h2{font-size:1.55rem;margin:2.2rem 0 .9rem;padding-bottom:.35rem;border-bottom:2px solid #e7eef5;color:#103b62}h3{font-size:1.22rem;margin:1.7rem 0 .65rem;color:#174f7d}h4{font-size:1.05rem;margin:1.4rem 0 .5rem}
+p{margin:.6rem 0 1rem}ul,ol{padding-left:1.5rem}li{margin:.25rem 0}a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}img{max-width:100%;height:auto}
+blockquote{margin:1rem 0;padding:.8rem 1.1rem;border-left:4px solid #4b8bbd;background:var(--soft);color:#31465a}blockquote p{margin:.2rem 0}
+table{width:100%;border-collapse:collapse;margin:1rem 0 1.4rem;font-size:.94rem;display:block;overflow-x:auto}th,td{border:1px solid var(--line);padding:.65rem .75rem;vertical-align:top;min-width:110px}th{background:#edf4fa;text-align:left;color:#173b59}tr:nth-child(even) td{background:#fbfcfd}
+code{font-family:Consolas,"SFMono-Regular",monospace;background:#eef2f5;border-radius:4px;padding:.12rem .3rem}pre{overflow:auto;background:#18212b;color:#eef4f8;padding:1rem;border-radius:8px}pre code{background:transparent;padding:0}
+hr{border:0;border-top:1px solid var(--line);margin:2rem 0}.MathJax{overflow-x:auto;overflow-y:hidden}
+@media(max-width:760px){main{margin:0;padding:28px 20px;border-radius:0}h1{font-size:1.7rem}h2{font-size:1.35rem}}
+@media print{body{background:#fff}main{box-shadow:none;margin:0;max-width:none;padding:0}a{color:inherit}}
+</style>
+<script>window.MathJax={tex:{inlineMath:[["\\(","\\)"]],displayMath:[["\\[","\\]"]]},svg:{fontCache:"global"}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script></head>
+<body><main><h1>\(k\geq3\) 含漂移超边停止时间：严格模型、精确方程与渐近公式</h1>
+<h2>结论先行</h2>
+<p>对于 \(k\geq3\)，仅给出一个标量“漂移因子”并不能唯一决定停止时间。必须先说明每个有序交易方向 \(i\to j\) 的概率。对任意合法流量矩阵 \(\Pi=(\pi_{ij})\)，停止时间的准确答案是单纯形上的离散 Poisson 方程；一般不存在只依赖 \((k,C,\sigma,p_{\mathrm{bias}})\) 的通用初等闭式。</p>
+<p>本文给出两层结果：</p>
+<ol>
+<li><strong>完全一般且精确的结果</strong>：任意 \(\Pi\) 下的 Markov 方程
+\[
+   u(\mathbf x)
+   =1+\sum_{i\ne j}\pi_{ij}
+   u(\mathbf x-\mathbf e_i+\mathbf e_j),
+   \qquad u|_{\partial\mathcal S}=0.
+   \]</li>
+<li><strong>与旧文档原意最接近的合法一参数模型</strong>：节点 0 为中心偏置节点，
+\(p_{\mathrm{bias}}\in[0,2]\)。该模型可严格导出漂移向量、协方差、
+精确递推、弱漂移扩散 PDE，以及固定强漂移的相对指数集中和全矩极限；
+正漂移竞争修正目前仍是待证明的二阶近似。</li>
+</ol>
+<p>最重要的新结论是：正负漂移不对称。</p>
+<ul>
+<li>\(p_{\mathrm{bias}}&lt;1\)：只有节点 0 具有负漂移；</li>
+<li>\(p_{\mathrm{bias}}&gt;1\)：有 \(k-1\) 个外围节点同时具有负漂移。</li>
+</ul>
+<p>因此，任何只通过 \(|p_{\mathrm{bias}}-1|\) 构造的对称校正函数，都不能在一般 \(k\) 下同时准确描述两侧。</p>
+<hr>
+<h2>1. 一般流量矩阵模型</h2>
+<h3>1.1 余额过程</h3>
+<p>考虑一个包含 \(k\geq3\) 个参与者的多方支付通道。余额向量为</p>
+<p>\[
+\mathbf B(t)=(B_0(t),\ldots,B_{k-1}(t)),
+\qquad
+\sum_{i=0}^{k-1}B_i(t)=C.
+\]</p>
+<p>固定每笔交易金额为 \(\sigma&gt;0\)。第 \(t\) 笔交易选择付款方 \(i\) 和收款方 \(j\)，其中</p>
+<p>\[
+\Pr(S_t=i,D_t=j)=\pi_{ij},
+\qquad i\ne j,
+\]</p>
+<p>\[
+\pi_{ij}\geq0,
+\qquad
+\sum_{i\ne j}\pi_{ij}=1.
+\]</p>
+<p>交易后的余额为</p>
+<p>\[
+\mathbf B(t+1)
+=\mathbf B(t)+\sigma(\mathbf e_j-\mathbf e_i).
+\]</p>
+<p>定义首次余额耗尽时间</p>
+<p>\[
+\tau
+=\inf\left\{t\geq0:\min_iB_i(t)=0\right\}.
+\]</p>
+<p>这里的时间单位是“该超边内发生的交易笔数”。停止事件是首次方向性余额耗尽，不等同于协议层面的通道永久关闭。</p>
+<h3>1.2 漂移向量</h3>
+<p>一步增量为</p>
+<p>\[
+\boldsymbol\xi_t
+=\sigma(\mathbf e_{D_t}-\mathbf e_{S_t}).
+\]</p>
+<p>节点 \(i\) 的漂移为</p>
+<p>\[
+\mu_i
+=\mathbb E[\xi_{t,i}]
+=\sigma\left(
+\sum_{j\ne i}\pi_{ji}
+-\sum_{j\ne i}\pi_{ij}
+\right).
+\]</p>
+<p>向量形式为</p>
+<p>\[
+\boxed{
+\boldsymbol\mu
+=\sigma\sum_{i\ne j}\pi_{ij}(\mathbf e_j-\mathbf e_i).
+}
+\]</p>
+<p>由于每笔交易守恒资金，必有</p>
+<p>\[
+\mathbf1^\top\boldsymbol\mu=0.
+\]</p>
+<p>但这不意味着每个 \(\mu_i\) 都等于零。一个标量漂移因子只有在同时规定如何生成整个 \(\Pi\) 后才有数学意义。</p>
+<h3>1.3 协方差</h3>
+<p>一步增量协方差为</p>
+<p>\[
+\boxed{
+\Gamma
+=\sigma^2\sum_{i\ne j}\pi_{ij}
+(\mathbf e_j-\mathbf e_i)(\mathbf e_j-\mathbf e_i)^\top
+-\boldsymbol\mu\boldsymbol\mu^\top.
+}
+\]</p>
+<p>严格地说，最后一项应理解为用货币单位漂移构成的外积；等价地，若 \(\mathbf d=\boldsymbol\mu/\sigma\)，则</p>
+<p>\[
+\Gamma
+=\sigma^2\left[
+\sum_{i\ne j}\pi_{ij}
+(\mathbf e_j-\mathbf e_i)(\mathbf e_j-\mathbf e_i)^\top
+-\mathbf d\mathbf d^\top
+\right].
+\]</p>
+<hr>
+<h2>2. 任意漂移下的精确停止时间方程</h2>
+<p>假设所有余额都是 \(\sigma\) 的整数倍，令</p>
+<p>\[
+X_i(t)=\frac{B_i(t)}\sigma,
+\qquad
+M=\frac C\sigma.
+\]</p>
+<p>内部状态空间为</p>
+<p>\[
+\mathcal S_M^\circ
+=\left\{
+\mathbf x\in\mathbb Z_{\geq1}^k:
+\sum_i x_i=M
+\right\}.
+\]</p>
+<p>令</p>
+<p>\[
+u(\mathbf x)=\mathbb E_{\mathbf x}\tau.
+\]</p>
+<p>对第一步条件化，得到</p>
+<p>\[
+\boxed{
+u(\mathbf x)
+=1+
+\sum_{i\ne j}\pi_{ij}
+u(\mathbf x-\mathbf e_i+\mathbf e_j),
+\qquad \mathbf x\in\mathcal S_M^\circ.
+}
+\]</p>
+<p>边界条件为</p>
+<p>\[
+\boxed{
+u(\mathbf x)=0,
+\qquad \min_i x_i=0.
+}
+\]</p>
+<p>若一次转移使某个余额从 1 变为 0，则对应的下一状态直接使用边界值 0。</p>
+<p>枚举内部状态后可写为</p>
+<p>\[
+\boxed{
+(I-Q)\mathbf u=\mathbf1.
+}
+\]</p>
+<p>还需要说明该线性系统确实存在唯一有限解。任选一个满足
+\(\pi_{ab}=\rho&gt;0\) 的有序方向，并令</p>
+<p>\[
+L=M-k+1.
+\]</p>
+<p>从任意内部状态出发，连续选择方向 \(a\to b\) 至多 \(L\) 次就会使
+节点 \(a\) 的余额降为零。因此每个长度为 \(L\) 的时间块内，吸收概率
+至少为 \(\rho^L&gt;0\)，从而</p>
+<p>\[
+\Pr_{\mathbf x}(\tau&gt;nL)
+\leq(1-\rho^L)^n.
+\]</p>
+<p>这同时证明 \(\tau&lt;\infty\) 几乎必然、\(\mathbb E_{\mathbf x}\tau&lt;\infty\)、
+\(Q\) 的谱半径小于 1，以及</p>
+<p>\[
+\boxed{\mathbf u=(I-Q)^{-1}\mathbf1}
+\]</p>
+<p>是唯一有限解。这是给定离散模型的精确答案，不是近似。对于小中等
+\(k\) 和容量，可以用稀疏线性系统得到机器精度下的期望停止时间。</p>
+<hr>
+<h2>3. 合法的一参数中心偏置模型</h2>
+<p>下面给出一个与旧文档“节点 0 正/负漂移”意图一致、但不存在负概率的模型。</p>
+<p>记</p>
+<p>\[
+p=p_{\mathrm{bias}},
+\qquad 0\leq p\leq2,
+\qquad \delta=p-1.
+\]</p>
+<p>每笔交易先从全部 \(\binom{k}{2}\) 个无序节点对中均匀选择一对。</p>
+<ul>
+<li>若选中 \(\{0,r\}\)，则以概率 \(p/2\) 从 \(r\) 向 0 转账，以概率 \((2-p)/2\) 从 0 向 \(r\) 转账；</li>
+<li>若选中两个外围节点 \(\{r,s\}\)，两个方向各取概率 \(1/2\)。</li>
+</ul>
+<p>于是 \(p=1\) 表示完全无偏，\(p&lt;1\) 表示节点 0 净流出，\(p&gt;1\) 表示节点 0 净流入。</p>
+<h3>3.1 单节点增量概率</h3>
+<p>节点 0 的增量分布是</p>
+<p>\[
+\Pr(\Delta X_0=+1)=\frac pk,
+\]</p>
+<p>\[
+\Pr(\Delta X_0=-1)=\frac{2-p}{k},
+\]</p>
+<p>\[
+\Pr(\Delta X_0=0)=1-\frac2k.
+\]</p>
+<p>因此，条件于节点 0 本轮活跃，余额增加概率为</p>
+<p>\[
+\Pr(\Delta X_0=+1\mid0\text{ 活跃})=\frac p2.
+\]</p>
+<p>任一外围节点 \(r\geq1\) 的增量分布为</p>
+<p>\[
+\Pr(\Delta X_r=+1)
+=\frac{k-p}{k(k-1)},
+\]</p>
+<p>\[
+\Pr(\Delta X_r=-1)
+=\frac{k-2+p}{k(k-1)},
+\]</p>
+<p>\[
+\Pr(\Delta X_r=0)=1-\frac2k.
+\]</p>
+<p>条件于外围节点活跃，余额增加概率为</p>
+<p>\[
+\Pr(\Delta X_r=+1\mid r\text{ 活跃})
+=\frac{k-p}{2(k-1)}.
+\]</p>
+<p>这正是旧推导试图表达的“有效概率”，但现在它来自一个完整、合法的联合交易模型。</p>
+<p>旧文档中 \(p/k\) 与 \((1-p)/k\) 的写法不正确；当 \(p&gt;1\) 时后者为负。节点 0 的正确减小概率是</p>
+<p>\[
+\boxed{\frac{2-p}{k}},
+\]</p>
+<p>不是 \((1-p)/k\)。</p>
+<h3>3.2 漂移向量</h3>
+<p>在整数余额单位下，节点 0 的每笔交易平均增量是</p>
+<p>\[
+d_0
+=\frac pk-\frac{2-p}{k}
+=\frac{2\delta}{k}.
+\]</p>
+<p>每个外围节点的平均增量是</p>
+<p>\[
+d_r
+=\frac{k-p}{k(k-1)}
+-\frac{k-2+p}{k(k-1)}
+=-\frac{2\delta}{k(k-1)}.
+\]</p>
+<p>因此</p>
+<p>\[
+\boxed{
+\mathbf d
+=\left(
+\frac{2\delta}{k},
+-\frac{2\delta}{k(k-1)},\ldots,
+-\frac{2\delta}{k(k-1)}
+\right),
+}
+\]</p>
+<p>\[
+\boxed{
+\boldsymbol\mu=\sigma\mathbf d.
+}
+\]</p>
+<p>容易检查 \(\sum_i d_i=0\)。</p>
+<h3>3.3 协方差矩阵</h3>
+<p>无论交易方向如何，同一无序节点对的增量外积相同。因此第二原始矩不受 \(p\) 影响：</p>
+<p>\[
+\mathbb E[\Delta\mathbf X\Delta\mathbf X^\top]
+=\frac{2}{k-1}
+\left(I-\frac1k\mathbf1\mathbf1^\top\right).
+\]</p>
+<p>所以</p>
+<p>\[
+\boxed{
+\operatorname{Cov}(\Delta\mathbf X)
+=\frac{2}{k-1}
+\left(I-\frac1k\mathbf1\mathbf1^\top\right)
+-\mathbf d\mathbf d^\top.
+}
+\]</p>
+<p>货币余额的一步协方差为上述矩阵乘以 \(\sigma^2\)。</p>
+<hr>
+<h2>4. 中心偏置模型的精确递推</h2>
+<p>记</p>
+<p>\[
+q_{\mathrm{pair}}=\frac{2}{k(k-1)},
+\qquad
+\theta=\frac p2.
+\]</p>
+<p>对任意内部状态 \(\mathbf x\)，精确递推为</p>
+<p>\[
+\boxed{
+\begin{aligned}
+u(\mathbf x)=1
+&amp;+q_{\mathrm{pair}}
+\sum_{r=1}^{k-1}
+\bigg[
+\theta\,
+u(\mathbf x+\mathbf e_0-\mathbf e_r)
++(1-\theta)
+u(\mathbf x-\mathbf e_0+\mathbf e_r)
+\bigg]
+\\
+&amp;+\frac{q_{\mathrm{pair}}}{2}
+\sum_{1\leq r&lt;s\leq k-1}
+\bigg[
+u(\mathbf x+\mathbf e_r-\mathbf e_s)
++u(\mathbf x-\mathbf e_r+\mathbf e_s)
+\bigg].
+\end{aligned}
+}
+\]</p>
+<p>边界仍为 \(u=0\)。这就是本文推荐作为理论基准和数值 ground truth 的公式。</p>
+<p>节点 0 与外围节点角色不同，但外围节点彼此可置换。因此可以把状态压缩为</p>
+<p>\[
+(x_0,\operatorname{sort}(x_1,\ldots,x_{k-1})),
+\]</p>
+<p>显著减少线性系统规模，而且不改变均分初始状态的精确结果。</p>
+<hr>
+<h2>5. 漂移下的平方势函数恒等式</h2>
+<p>定义</p>
+<p>\[
+V(\mathbf B)
+=\sum_i\left(B_i-\frac Ck\right)^2.
+\]</p>
+<p>一次 \(i\to j\) 交易给出</p>
+<p>\[
+\Delta V
+=2\sigma(B_j-B_i)+2\sigma^2.
+\]</p>
+<p>对一般流量矩阵取条件期望：</p>
+<p>\[
+\boxed{
+\mathbb E[\Delta V\mid\mathcal F_t]
+=2\sigma^2
++2\left(
+\mathbf B(t)-\frac Ck\mathbf1
+\right)^\top\boldsymbol\mu.
+}
+\]</p>
+<p>停止后可选停止得到精确占用恒等式</p>
+<p>\[
+\boxed{
+\begin{aligned}
+\mathbb E V(\mathbf B(\tau))-V(\mathbf B(0))
+=2\sigma^2\mathbb E\tau
++2\mathbb E\sum_{t=0}^{\tau-1}
+\left(
+\mathbf B(t)-\frac Ck\mathbf1
+\right)^\top\boldsymbol\mu.
+\end{aligned}
+}
+\]</p>
+<p>零漂移时第二项消失，才恢复先前的简单鞅界。含漂移时不能继续直接使用零漂移下界作为“所有漂移都成立”的结论。</p>
+<hr>
+<h2>6. 任意容量下的严格路径界和漂移上界</h2>
+<p>假设初始均分</p>
+<p>\[
+X_i(0)=N,
+\qquad N=\frac{C}{k\sigma}.
+\]</p>
+<p>任何节点至少需要累计 \(N\) 次净减小才能到零，而一笔交易最多使一个余额减小 1，所以</p>
+<p>\[
+\boxed{\tau\geq N\quad\text{几乎必然}.}
+\]</p>
+<p>从而</p>
+<p>\[
+\boxed{\mathbb E\tau\geq N.}
+\]</p>
+<p>对每个节点，</p>
+<p>\[
+X_i(t)-d_it
+\]</p>
+<p>是鞅。在 \(\tau\) 停止后</p>
+<p>\[
+\mathbb E X_i(\tau)=N+d_i\mathbb E\tau.
+\]</p>
+<p>若 \(d_i&lt;0\)，利用 \(X_i(\tau)\geq0\)，得到</p>
+<p>\[
+\mathbb E\tau\leq\frac{N}{|d_i|}.
+\]</p>
+<p>于是中心偏置模型有严格界：</p>
+<h3>6.1 负漂移 \(p&lt;1\)</h3>
+<p>只有节点 0 漂移为负，故</p>
+<p>\[
+\boxed{
+N\leq\mathbb E\tau
+\leq\frac{kN}{2(1-p)}
+=\frac{C}{2\sigma(1-p)}.
+}
+\]</p>
+<h3>6.2 正漂移 \(p&gt;1\)</h3>
+<p>每个外围节点漂移为负，故</p>
+<p>\[
+\boxed{
+N\leq\mathbb E\tau
+\leq\frac{k(k-1)N}{2(p-1)}
+=\frac{(k-1)C}{2\sigma(p-1)}.
+}
+\]</p>
+<p>这些上界同时是强漂移极限的首阶时间尺度。</p>
+<hr>
+<h2>7. 大容量形式扩散近似</h2>
+<p>当 \(N=C/(k\sigma)\) 较大时，对精确离散方程作二阶 Taylor 展开。令 \(u(\mathbf b)\) 表示从货币余额 \(\mathbf b\) 出发的期望停止时间，则</p>
+<p>\[
+\boxed{
+\boldsymbol\mu^\top\nabla u
++\frac12\operatorname{tr}
+\left(\Gamma\nabla^2u\right)
+=-1,
+}
+\]</p>
+<p>定义域和边界为</p>
+<p>\[
+\mathbf b\in
+\left\{
+\mathbf b\geq0:\sum_i b_i=C
+\right\},
+\qquad
+u|_{\min_i b_i=0}=0.
+\]</p>
+<p>这是由生成元二阶展开得到的单纯形对流—扩散 Poisson 方程。它保留
+完整漂移向量和节点相关性，是比“最弱节点投影 + 有效上界拟合”更有
+结构依据的连续近似；但仅有 Taylor 展开还不能证明离散退出时间期望
+收敛，严格极限仍需处理边界、退出时间映射和一致可积性。</p>
+<hr>
+<h2>8. 弱漂移极限（内部对抗性复核完成，待外部独立核查）</h2>
+<p>若 \(p-1\) 固定且 \(N\to\infty\)，漂移会压过扩散，停止时间从 \(N^2\) 量级变为 \(N\) 量级。要得到漂移与扩散同时存在的非退化极限，应令</p>
+<p>\[
+\delta_N=p-1=\frac\eta N,
+\]</p>
+<p>其中 \(\eta\) 固定。</p>
+<p>定义缩放过程</p>
+<p>\[
+\mathbf Z^{(N)}(s)
+=\frac1N\mathbf X(\lfloor N^2s\rfloor).
+\]</p>
+<p>极限漂移为</p>
+<p>\[
+\boldsymbol\beta_\eta
+=\left(
+\frac{2\eta}{k},
+-\frac{2\eta}{k(k-1)},\ldots,
+-\frac{2\eta}{k(k-1)}
+\right).
+\]</p>
+<p>极限生成元为</p>
+<p>\[
+\mathcal A_\eta
+=\boldsymbol\beta_\eta^\top\nabla
++\frac1{k-1}\Delta_{\mathrm{tan}}.
+\]</p>
+<p>形式极限的期望停止时间 \(a_\eta(\mathbf z)\) 应满足</p>
+<p>\[
+\boxed{
+\boldsymbol\beta_\eta^\top\nabla a_\eta
++\frac1{k-1}\Delta_{\mathrm{tan}}a_\eta
+=-1,
+\qquad
+a_\eta|_{\partial\mathcal S}=0.
+}
+\]</p>
+<p>从均分点出发，渐近定理工作稿为</p>
+<p>\[
+\boxed{
+\mathbb E\tau
+=N^2a_{k}(\eta)+o(N^2).
+}
+\]</p>
+<p>\(a_k(\eta)\) 是 PDE 在 \((1,\ldots,1)\) 处的值。除少数特殊情形外，它需要数值求解，不应伪装成未经证明的初等闭式。</p>
+<p>完整证明见
+<a href="./outputs/researchwrite/hypergraph-stopping-time/07_weak_drift_proof_package.md">弱漂移退出时间极限证明包</a>。
+其四个闭合环节是：</p>
+<ol>
+<li>增量均值为 \(\boldsymbol\beta_\eta/N\)，协方差趋于
+\(A_0=2(I-\mathbf1\mathbf1^\top/k)/(k-1)\)；有界三角阵列不变原理
+给出切向 Brownian 运动加常漂移的过程极限。</li>
+<li>固定时域上的生存事件由有限个坐标运行最小值决定；每个坐标的极限
+是方差 \(2/k&gt;0\) 的一维带漂移 Brownian 运动，其运行最小值无原子，
+因而首次出界时间收敛。</li>
+<li>对所有内部初态建立统一 \(AN^2\) 均值界：\(\eta=0\) 用平方势函数，
+\(\eta&gt;0\) 用任一外围负漂移坐标，\(\eta&lt;0\) 用中心负漂移坐标。
+强 Markov 分块随后给出
+\[
+   \sup_{\mathbf x}\Pr_{\mathbf x}
+   \{\tau_N&gt;m\lceil2AN^2\rceil\}\le2^{-m},
+   \]
+且 \(L_N/N^2\le2A+1\)，从而给出统一指数矩；对任意固定 \(q&gt;0\)，
+\[
+   \mathbb E(\tau_N/N^2)^q\longrightarrow\mathbb ET^q.
+   \]</li>
+<li>极限协方差在切向子空间正定，Dynkin/Feynman–Kac 把期望退出时间
+识别为上式 Dirichlet–Poisson 问题的唯一 \(H_0^1\) 变分弱解；
+比较原理另给出唯一连续黏性解。只声称内部经典正则性，不声称角点处
+\(C^2\) 光滑。</li>
+</ol>
+<p>因此本节的状态从“形式命题”升级为“证明链闭合并完成内部对抗性审计的
+定理工作稿”。逐环节审计见
+<a href="./outputs/researchwrite/hypergraph-stopping-time/08_weak_drift_adversarial_audit.md">弱漂移内部对抗性审计</a>。
+投稿前仍需由未参与推导的概率论研究者外部逐行核查，并补入所用不变
+原理和 PDE 结果的精确定理编号。还须明确：公平随机选对多人模型已有
+Sobel–Frankowski（2002）直接先例；三人和四人 Brownian/simplex 路线
+分别已有 Alabert 等（2004）、Denisov–Wachtel（2024）以及
+O’Connor–Saloff-Coste（2023）的先例。候选差异点是固定一般 \(k\) 的
+中心偏置近临界全矩极限，而非公平模型或 \(k=3,4\) 基线。</p>
+<p>正确的漂移强度判据应依赖 \(N\)，而不是旧文档中的 \(|p-1|&lt;k/4\)。可用 Péclet 数判断：</p>
+<p>\[
+\mathrm{Pe}_0
+\approx N|p-1|
+\quad\text{（中心节点）},
+\]</p>
+<p>\[
+\mathrm{Pe}_{\mathrm{per}}
+\approx\frac{N|p-1|}{k-1}
+\quad\text{（外围节点）}.
+\]</p>
+<ul>
+<li>\(\mathrm{Pe}\ll1\)：近零漂移、\(N^2\) 时间尺度；</li>
+<li>\(\mathrm{Pe}=O(1)\)：使用弱漂移 PDE；</li>
+<li>\(\mathrm{Pe}\gg1\)：使用强漂移渐近式。</li>
+</ul>
+<h3>多项式消失漂移的统一相图</h3>
+<p>令</p>
+<p>\[
+p_N=1+\eta N^{-\alpha},
+\qquad \eta\ne0,\quad \alpha\ge0.
+\]</p>
+<p>则 \(\mathrm{Pe}_N=|\eta|N^{1-\alpha}\)，现有弱、强漂移证明可以统一为：</p>
+<table>
+<thead>
+<tr>
+<th>区间</th>
+<th align="right">时间尺度</th>
+<th>停止时间极限</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>\(0\le\alpha&lt;1\)</td>
+<td align="right">\(N^{1+\alpha}\)</td>
+<td>缩放停止时间以 \(e^{-cN^{1-\alpha}}\) 相对集中于正负不对称常数，且全部固定正阶矩收敛</td>
+</tr>
+<tr>
+<td>\(\alpha=1\)</td>
+<td align="right">\(N^2\)</td>
+<td>带漂移 Brownian 单纯形退出及全部固定正阶矩收敛</td>
+</tr>
+<tr>
+<td>\(\alpha&gt;1\)</td>
+<td align="right">\(N^2\)</td>
+<td>漂移在首阶消失，回到公平 Brownian 单纯形退出及全部固定正阶矩收敛</td>
+</tr>
+</tbody></table>
+<p>其中 \(\alpha&gt;1\) 的关键新步骤是对平方势函数证明全状态一步期望增量
+最终一致为正，从而得到统一 \(O(N^2)\) 均值界和指数矩。完整证明及
+外部复核清单见
+<a href="./outputs/researchwrite/hypergraph-stopping-time/11_polynomial_drift_phase_diagram_proof_package.md">多项式消失漂移相图证明包</a>。
+这仍是内部工作稿；一维 \(1/N\) 弱不对称和小漂移转变已有先例，不能把
+临界尺度本身写成原创发现。</p>
+<hr>
+<h2>9. 强漂移集中与矩渐近</h2>
+<p>以下令 \(k\) 固定、\(p\ne1\) 固定并令 \(N\to\infty\)。</p>
+<p>本节原先只闭合了均值首阶式。现已通过自由延拓、最大型
+Azuma–Hoeffding 早尾界、单负漂移坐标晚尾界与统一指数矩，将结论加强为：
+对下文对应的 \(t_N^*\) 和任意固定 \(\varepsilon\in(0,1)\)，存在
+\(c=c(k,p,\varepsilon)&gt;0\)，使充分大 \(N\) 下</p>
+<p>\[
+\Pr\!\left(\left|\frac{\tau_N}{t_N^*}-1\right|&gt;\varepsilon\right)
+\le (k+1)e^{-cN},
+\]</p>
+<p>并且对每个固定 \(q&gt;0\)，</p>
+<p>\[
+\mathbb E\left(\frac{\tau_N}{t_N^*}\right)^q\longrightarrow1.
+\]</p>
+<p>特别地，下列均值首阶式是这个更强定理的推论。完整逐步证明、指数矩
+论证、边界条件和 12 项外部复核清单见
+<a href="./outputs/researchwrite/hypergraph-stopping-time/10_strong_drift_proof_package.md">固定强漂移退出时间证明包</a>。
+当前状态是内部闭合工作稿，尚未通过独立概率论核查。</p>
+<h3>9.1 负漂移：中心节点唯一主导</h3>
+<p>当 \(p&lt;1\) 时，节点 0 的负漂移速度为</p>
+<p>\[
+v_0=\frac{2(1-p)}k.
+\]</p>
+<p>从初始距离 \(N\) 到达零的确定性时间为</p>
+<p>\[
+t_-^*=\frac N{v_0}
+=\frac{kN}{2(1-p)}.
+\]</p>
+<p>外围节点具有正漂移。为使用标准鞅集中不等式，在同一独立交易方向序列上
+把余额随机游走形式地延拓到 \(\tau\) 之后；该延拓不改变首次到零事件。
+令</p>
+<p>\[
+M_i(t)=X_i(t)-N-d_it.
+\]</p>
+<p>则 \(M_i\) 是鞅，且其一步差分绝对值有统一常数上界。对任意固定
+\(\varepsilon\in(0,1)\)，令</p>
+<p>\[
+t_{-,\varepsilon}=\left\lfloor(1-\varepsilon)t_-^*\right\rfloor.
+\]</p>
+<p>在 \(s\leq t_{-,\varepsilon}\) 时，中心节点的确定性均值至少为
+\(\varepsilon N\)，每个外围节点的确定性均值至少为 \(N\)。若此时已经
+停止，则至少一个坐标鞅发生了量级为 \(N\) 的向下偏离。最大型
+Azuma–Hoeffding 不等式和对固定 \(k\) 的并集界给出</p>
+<p>\[
+\Pr(\tau&lt;t_{-,\varepsilon})\leq k\exp[-c_-(k,p,\varepsilon)N]
+\]</p>
+<p>其中 \(c_-&gt;0\)。结合第 6 节的严格上界
+\(\mathbb E\tau\leq t_-^*\)，有</p>
+<p>\[
+t_{-,\varepsilon}\Pr(\tau\geq t_{-,\varepsilon})
+\leq\mathbb E\tau\leq t_-^*.
+\]</p>
+<p>先令 \(N\to\infty\)，再令 \(\varepsilon\downarrow0\)，得到</p>
+<p>\[
+\boxed{
+\mathbb E\tau
+=\frac{kN}{2(1-p)}[1+o(1)]
+=\frac{C}{2\sigma(1-p)}[1+o(1)].
+}
+\]</p>
+<p>该首阶表达式同时是第 6 节的严格上界。</p>
+<h3>9.2 正漂移：\(k-1\) 个外围节点竞争</h3>
+<p>当 \(p&gt;1\) 时，每个外围节点的负漂移速度为</p>
+<p>\[
+v_r=\frac{2(p-1)}{k(k-1)}.
+\]</p>
+<p>若只看确定性路径，所有外围节点同时在</p>
+<p>\[
+t_+^*
+=\frac N{v_r}
+=\frac{k(k-1)N}{2(p-1)}
+\]</p>
+<p>到达零。与负漂移情形相同，对</p>
+<p>\[
+t_{+,\varepsilon}=\left\lfloor(1-\varepsilon)t_+^*\right\rfloor
+\]</p>
+<p>应用最大型 Azuma–Hoeffding 不等式：在此之前，每个外围节点的确定性
+均值至少为 \(\varepsilon N\)，中心节点的确定性均值至少为 \(N\)。因此</p>
+<p>\[
+\Pr(\tau&lt;t_{+,\varepsilon})
+\leq k\exp[-c_+(k,p,\varepsilon)N]
+\]</p>
+<p>其中 \(c_+&gt;0\)。再结合第 6 节的
+\(\mathbb E\tau\leq t_+^*\)，可严格得到首阶极限</p>
+<p>\[
+\boxed{
+\mathbb E\tau
+=\frac{k(k-1)N}{2(p-1)}[1+o(1)].
+}
+\]</p>
+<p>但有限 \(N\) 时，\(k-1\) 个负漂移节点竞争，最小停止时间会显著小于 \(t_+^*\)。这正是单一“最弱节点”近似容易系统性高估的原因。</p>
+<h3>9.3 正漂移的候选竞争修正（待证）</h3>
+<p>令</p>
+<p>\[
+m=k-1,
+\qquad
+\kappa_m
+=\mathbb E\max_{1\leq r\leq m}Z_r,
+\quad Z_r\overset{\mathrm{iid}}\sim N(0,1).
+\]</p>
+<p>它可由一维积分计算：</p>
+<p>\[
+\kappa_m
+=\int_0^\infty
+\left[
+1-\Phi(x)^m-(1-\Phi(x))^m
+\right]dx.
+\]</p>
+<p>外围节点在 \(t_+^*\) 附近的高斯波动具有等方差、等协方差。若对角元记为 \(\gamma\)、非对角元记为 \(c\)，由第 3.3 节可得一个重要消去：</p>
+<p>\[
+\gamma-c=\frac{2}{k-1}.
+\]</p>
+<p>若对相关随机游走的联合首次到达时间使用 delta-method，并假设余项在
+取最小值和期望后仍为 \(o(\sqrt N)\)，则得到候选展开</p>
+<p>\[
+\boxed{
+\mathbb E\tau
+=t_+^*
+\left[
+1-\kappa_{k-1}
+\sqrt{\frac{k}{(p-1)N}}
++o(N^{-1/2})
+\right].
+}
+\]</p>
+<p>这比只使用 \(t_+^*\) 更准确，并明确体现外围节点数量造成的极值竞争。</p>
+<p>这里的 \(N^{-1/2}\) 系数具有明确的协方差来源，但当前尚未证明联合首次
+到达时间的强近似、过冲控制和期望余项。因此该式目前是有数值支持的
+形式二阶渐近式，而不是已完成证明的渐近定理。</p>
+<p>该修正式只在</p>
+<p>\[
+\kappa_{k-1}\sqrt{\frac{k}{(p-1)N}}\ll1
+\]</p>
+<p>时使用。如果括号内修正不小，应该回到精确 Markov 方程或对流—扩散 PDE，不能强行套用渐近展开。</p>
+<hr>
+<h2>10. 为什么不能沿用对称经验校正函数</h2>
+<p>旧文档提出的形式大致为</p>
+<p>\[
+h(p,k)=\exp[-\alpha(k)|p-1|^{\gamma(k)}].
+\]</p>
+<p>即使重新拟合参数，它仍存在结构问题：</p>
+<ol>
+<li>负漂移由一个中心节点主导，正漂移由 \(k-1\) 个外围节点竞争；两侧不对称。</li>
+<li>强漂移首阶时间分别为
+\[
+   t_-^*=\frac{kN}{2(1-p)},
+   \qquad
+   t_+^*=\frac{k(k-1)N}{2(p-1)},
+   \]
+相差结构因子 \(k-1\)。</li>
+<li>正漂移还存在 \(\kappa_{k-1}\sqrt{k/[(p-1)N]}\) 的极值修正，不能只由 \(|p-1|\) 表示。</li>
+<li>漂移适用区间取决于 \(N(p-1)\)，旧条件 \(|p-1|&lt;k/4\) 缺少容量尺度，而且当 \(p\in[0,2]\)、\(k\geq4\) 时几乎自动成立，不能判断扩散近似是否有效。</li>
+<li>将多个相关余额过程投影成一个赌徒破产过程，需要额外证明；经验有效上界只能称为拟合参数，不能称为定理。</li>
+</ol>
+<p>因此推荐用“精确 Markov 方程 + 弱漂移 PDE + 强漂移渐近式”替换 v5/v6 的单一经验闭式。</p>
+<hr>
+<h2>11. 数值验证</h2>
+<p>验证程序见 <a href="./drift_experiments.py">drift_experiments.py</a>。</p>
+<h3>11.1 精确 Markov 方程与 Monte Carlo</h3>
+<p>实验覆盖</p>
+<p>\[
+k\in\{3,4,5\},
+\quad N=8,
+\quad p\in\{0.4,0.7,1.0,1.3,1.6\},
+\]</p>
+<p>每个场景进行 30,000 次独立仿真。</p>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th align="right">结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>场景数</td>
+<td align="right">15</td>
+</tr>
+<tr>
+<td>精确值与 Monte Carlo 最大相对差</td>
+<td align="right">0.547%</td>
+</tr>
+<tr>
+<td>该 15 个场景的线性系统最大绝对残差</td>
+<td align="right">\(8.88\times10^{-14}\)</td>
+</tr>
+</tbody></table>
+<p>部分结果：</p>
+<table>
+<thead>
+<tr>
+<th align="right">\(k\)</th>
+<th align="right">\(N\)</th>
+<th align="right">\(p\)</th>
+<th align="right">Markov 精确值</th>
+<th align="right">Monte Carlo</th>
+<th align="right">95% 区间</th>
+<th align="right">相对差</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">3</td>
+<td align="right">8</td>
+<td align="right">0.4</td>
+<td align="right">19.9034</td>
+<td align="right">19.9019</td>
+<td align="right">[19.8137, 19.9902]</td>
+<td align="right">0.007%</td>
+</tr>
+<tr>
+<td align="right">3</td>
+<td align="right">8</td>
+<td align="right">1.0</td>
+<td align="right">64.0000</td>
+<td align="right">63.9075</td>
+<td align="right">[63.3985, 64.4165]</td>
+<td align="right">0.145%</td>
+</tr>
+<tr>
+<td align="right">3</td>
+<td align="right">8</td>
+<td align="right">1.6</td>
+<td align="right">24.2020</td>
+<td align="right">24.2418</td>
+<td align="right">[24.1385, 24.3450]</td>
+<td align="right">0.164%</td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td align="right">8</td>
+<td align="right">0.7</td>
+<td align="right">45.1650</td>
+<td align="right">45.0891</td>
+<td align="right">[44.8181, 45.3600]</td>
+<td align="right">0.168%</td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td align="right">8</td>
+<td align="right">1.3</td>
+<td align="right">48.9165</td>
+<td align="right">48.7410</td>
+<td align="right">[48.4577, 49.0242]</td>
+<td align="right">0.359%</td>
+</tr>
+<tr>
+<td align="right">5</td>
+<td align="right">8</td>
+<td align="right">1.6</td>
+<td align="right">43.3636</td>
+<td align="right">43.4086</td>
+<td align="right">[43.2119, 43.6054]</td>
+<td align="right">0.104%</td>
+</tr>
+</tbody></table>
+<h3>11.2 强负漂移公式</h3>
+<p>在 \(k=3,5\)、\(N=20\sim320\)、\(p=0.5\) 的实验中，公式</p>
+<p>\[
+\frac{kN}{2(1-p)}
+\]</p>
+<p>与 Monte Carlo 的最大相对差为 0.322%。这与“唯一负漂移中心节点主导”的理论一致。</p>
+<h3>11.3 强正漂移竞争修正</h3>
+<p>当 \(p=1.5\) 时，只使用首阶 \(t_+^*\) 会明显高估有限容量停止时间。加入竞争修正后的结果为：</p>
+<table>
+<thead>
+<tr>
+<th align="right">\(k\)</th>
+<th align="right">\(N\)</th>
+<th align="right">Monte Carlo</th>
+<th align="right">首阶公式误差</th>
+<th align="right">竞争修正误差</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">3</td>
+<td align="right">20</td>
+<td align="right">85.23</td>
+<td align="right">40.8%</td>
+<td align="right">2.72%</td>
+</tr>
+<tr>
+<td align="right">3</td>
+<td align="right">80</td>
+<td align="right">406.62</td>
+<td align="right">18.0%</td>
+<td align="right">0.19%</td>
+</tr>
+<tr>
+<td align="right">3</td>
+<td align="right">320</td>
+<td align="right">1772.00</td>
+<td align="right">8.35%</td>
+<td align="right">0.02%</td>
+</tr>
+<tr>
+<td align="right">5</td>
+<td align="right">80</td>
+<td align="right">1083.94</td>
+<td align="right">47.6%</td>
+<td align="right">6.11%</td>
+</tr>
+<tr>
+<td align="right">5</td>
+<td align="right">160</td>
+<td align="right">2444.51</td>
+<td align="right">30.9%</td>
+<td align="right">2.78%</td>
+</tr>
+<tr>
+<td align="right">5</td>
+<td align="right">320</td>
+<td align="right">5305.04</td>
+<td align="right">20.6%</td>
+<td align="right">1.31%</td>
+</tr>
+</tbody></table>
+<p>这说明修正式的误差随 \(N\) 增大而收敛，但 \(k\) 较大、\(N(p-1)/(k-1)\) 不够大时仍应使用精确方程。</p>
+<h3>11.4 弱漂移 \(p=1+\eta/N\)</h3>
+<p>下表给出 \(N=20\) 的精确 Markov 结果 \(\mathbb E\tau/N^2\)：</p>
+<table>
+<thead>
+<tr>
+<th align="right">\(k\)</th>
+<th align="right">\(\eta=-2\)</th>
+<th align="right">\(\eta=-1\)</th>
+<th align="right">\(\eta=0\)</th>
+<th align="right">\(\eta=1\)</th>
+<th align="right">\(\eta=2\)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">3</td>
+<td align="right">0.6431</td>
+<td align="right">0.8669</td>
+<td align="right">1.0000</td>
+<td align="right">0.8733</td>
+<td align="right">0.6719</td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td align="right">0.7776</td>
+<td align="right">0.9688</td>
+<td align="right">1.0635</td>
+<td align="right">0.9777</td>
+<td align="right">0.8218</td>
+</tr>
+</tbody></table>
+<p>结果随 \(N=5,10,20\) 已基本稳定，支持第 8 节的 \(N^2a_k(\eta)\) 弱漂移缩放；同时正负 \(\eta\) 的数值并不完全相同，再次说明对称 \(|p-1|\) 校正缺少理论依据。</p>
+<p><img src="./figures/fig6-drift-validation.png" alt="带漂移精确解、强漂移修正与弱漂移缩放"></p>
+<p>原始结果：</p>
+<ul>
+<li><a href="./results/drift-exact-validation.csv">精确 Markov 验证</a></li>
+<li><a href="./results/drift-strong-asymptotic.csv">强漂移渐近验证</a></li>
+<li><a href="./results/drift-weak-scaling.csv">弱漂移缩放</a></li>
+</ul>
+<hr>
+<h2>12. 论文中建议采用的公式体系</h2>
+<h3>定理：精确离散方程</h3>
+<p>对给定合法 \(\Pi\)，使用</p>
+<p>\[
+(I-Q)\mathbf u=\mathbf1,
+\qquad u|_{\partial\mathcal S}=0.
+\]</p>
+<p>这是主定理和小规模 ground truth。</p>
+<h3>命题：中心偏置模型的漂移与协方差</h3>
+<p>使用第 3.2、3.3 节的 \(\mathbf d\) 与协方差矩阵；这些是逐步直接计算得到的精确公式。</p>
+<h3>定理：漂移上界</h3>
+<p>使用第 6 节的</p>
+<p>\[
+\mathbb E\tau\leq\frac{kN}{2(1-p)}
+\quad(p&lt;1),
+\]</p>
+<p>\[
+\mathbb E\tau\leq\frac{k(k-1)N}{2(p-1)}
+\quad(p&gt;1).
+\]</p>
+<h3>渐近定理工作稿：弱漂移</h3>
+<p>在 \(p=1+\eta/N\)、固定 \(k\)、\(N\to\infty\) 下，使用第 8 节已经
+闭合并完成内部对抗性复核的单纯形对流—扩散退出与全矩极限；待外部
+独立核查后冻结为论文定理。</p>
+<h3>渐近定理：强漂移首阶</h3>
+<p>在固定 \(p\ne1\)、固定 \(k\)、\(N\to\infty\) 下，使用第 9.1、9.2 节
+由漂移上界和最大型 Azuma–Hoeffding 集中界得到的首阶式。</p>
+<h3>待证二阶命题：正漂移竞争修正</h3>
+<p>第 9.3 节的 \(N^{-1/2}\) 修正保留为待证命题和经验比较对象，直至联合
+首次到达强近似与 \(o(\sqrt N)\) 期望余项得到证明。</p>
+<p>不建议再把经验 \(h(p,k)\)、\(b_{\mathrm{eff}}\) 或拟合误差包络称为定理。它们若继续保留，应明确标为“经验回归基线”，并与精确 Markov 解在留出参数域上比较。</p>
+</main></body></html>

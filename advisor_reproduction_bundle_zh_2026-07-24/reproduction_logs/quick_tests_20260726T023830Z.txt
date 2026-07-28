@@ -1,0 +1,69 @@
+test_drift (unittest.loader._FailedTest.test_drift) ... ERROR
+test_final_formula (unittest.loader._FailedTest.test_final_formula) ... ERROR
+test_hyperedge (unittest.loader._FailedTest.test_hyperedge) ... ERROR
+test_gaussian_discrete_bridge (unittest.loader._FailedTest.test_gaussian_discrete_bridge) ... ERROR
+
+======================================================================
+ERROR: test_drift (unittest.loader._FailedTest.test_drift)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_drift
+Traceback (most recent call last):
+  File "C:\Users\jiate\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\unittest\loader.py", line 137, in loadTestsFromName
+    module = __import__(module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\newblockchain\advisor_reproduction_bundle_zh_2026-07-24\test_drift.py", line 5, in <module>
+    from drift_experiments import exact_drifted_markov_mean, leading_strong_drift
+  File "E:\newblockchain\advisor_reproduction_bundle_zh_2026-07-24\drift_experiments.py", line 16, in <module>
+    import matplotlib
+ModuleNotFoundError: No module named 'matplotlib'
+
+
+======================================================================
+ERROR: test_final_formula (unittest.loader._FailedTest.test_final_formula)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_final_formula
+Traceback (most recent call last):
+  File "C:\Users\jiate\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\unittest\loader.py", line 137, in loadTestsFromName
+    module = __import__(module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\newblockchain\advisor_reproduction_bundle_zh_2026-07-24\test_final_formula.py", line 4, in <module>
+    from drift_formula_final import predict_stopping_time
+  File "E:\newblockchain\advisor_reproduction_bundle_zh_2026-07-24\drift_formula_final.py", line 18, in <module>
+    from scipy.integrate import quad
+ModuleNotFoundError: No module named 'scipy'
+
+
+======================================================================
+ERROR: test_hyperedge (unittest.loader._FailedTest.test_hyperedge)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_hyperedge
+Traceback (most recent call last):
+  File "C:\Users\jiate\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\unittest\loader.py", line 137, in loadTestsFromName
+    module = __import__(module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\newblockchain\advisor_reproduction_bundle_zh_2026-07-24\test_hyperedge.py", line 8, in <module>
+    from run_experiments import (
+  File "E:\newblockchain\advisor_reproduction_bundle_zh_2026-07-24\run_experiments.py", line 29, in <module>
+    import matplotlib
+ModuleNotFoundError: No module named 'matplotlib'
+
+
+======================================================================
+ERROR: test_gaussian_discrete_bridge (unittest.loader._FailedTest.test_gaussian_discrete_bridge)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_gaussian_discrete_bridge
+Traceback (most recent call last):
+  File "C:\Users\jiate\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\unittest\loader.py", line 137, in loadTestsFromName
+    module = __import__(module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\newblockchain\advisor_reproduction_bundle_zh_2026-07-24\test_gaussian_discrete_bridge.py", line 9, in <module>
+    from gaussian_discrete_bridge_validation import (
+  File "E:\newblockchain\advisor_reproduction_bundle_zh_2026-07-24\gaussian_discrete_bridge_validation.py", line 19, in <module>
+    import matplotlib
+ModuleNotFoundError: No module named 'matplotlib'
+
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.000s
+
+FAILED (errors=4)

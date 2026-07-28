@@ -1,0 +1,43 @@
+{
+  "artifact_kind": "drift-interpolation-replication-comparison-and-pooled-sensitivity",
+  "anchor_count": 8,
+  "formal_manifest_entries": 45,
+  "replication_manifest_entries": 45,
+  "seeds_disjoint": true,
+  "all_direct_anchor_intervals_contain_zero": true,
+  "direct_anchor_failure_count": 0,
+  "formal_precision_gate_pass": true,
+  "replication_precision_gate_pass": false,
+  "pooled_precision_gate_pass": true,
+  "formal_negative_anchor_count": 7,
+  "replication_negative_anchor_count": 8,
+  "pooled_negative_anchor_count": 8,
+  "formal_replication_slope_correlation": 0.80850988538237,
+  "fixed_anchor_direct_comparison": {
+    "formal_mean": -0.039232689414660835,
+    "replication_mean": -0.03848206629513129,
+    "difference_replication_minus_formal": 0.0007506231195295449,
+    "welch_standard_error": 0.0034485060482878885,
+    "welch_degrees_of_freedom": 69.85301274878408,
+    "simultaneous_critical": 1.9945108978946513,
+    "simultaneous_ci_low": -0.006127459775236268,
+    "simultaneous_ci_high": 0.007628706014295357,
+    "simultaneous_ci_halfwidth": 0.006878082894765812,
+    "contains_zero": true
+  },
+  "fixed_anchor_pooled_sensitivity": {
+    "pooled_slope": -0.03885737785489606,
+    "pooled_standard_error": 0.001713825542005174,
+    "pooled_critical": 1.9904502102301282,
+    "pooled_ci_low": -0.04226866226527803,
+    "pooled_ci_high": -0.0354460934445141,
+    "pooled_ci_halfwidth": 0.003411284410381962,
+    "pooled_precision_gate_pass": true
+  },
+  "claim_boundary": "finite average over eight frozen topology anchors; simulation uncertainty only",
+  "software": {
+    "python": "3.10.16",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3"
+  }
+}

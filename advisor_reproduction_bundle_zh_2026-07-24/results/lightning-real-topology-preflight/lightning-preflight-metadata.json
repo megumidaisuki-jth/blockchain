@@ -1,0 +1,21 @@
+{
+  "artifact_kind": "real-topology-stopping-time-preflight",
+  "claim_boundary": "performance and uncertainty planning only; not formal evidence",
+  "repetitions_per_cell": 2000,
+  "comparisons": 48,
+  "cell_count": 48,
+  "unique_seed_count": 48,
+  "censored_count": 0,
+  "maximum_cell_runtime_seconds": 25.5388825,
+  "total_runtime_seconds": 291.7516231999998,
+  "maximum_normalized_ci_halfwidth": 0.08877021595485855,
+  "minimum_normalized_ci_halfwidth": 0.0233652748885366,
+  "source_archive_sha256": "f380b71796edd86019ddc0b7822938559bfd40a2f650b21ccb66f14ef10e9320",
+  "software": {
+    "python": "3.10.16",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "networkx": "3.4.2",
+    "numba": "0.62.1"
+  }
+}

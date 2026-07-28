@@ -1,0 +1,97 @@
+{
+  "project": "hypergraph-stopping-time",
+  "mode": "hybrid",
+  "phase": "correlated_hypergraph_network_first_depletion",
+  "status": "internal_draft",
+  "updated": "2026-07-24",
+  "publication_readiness": false,
+  "figure_output_default": "png_only",
+  "manuscript_language": "zh",
+  "manuscript_language_status": "chinese_primary_english_not_current_scope",
+  "score_scope": "foundation files only; no manuscript draft exists",
+  "writing_start_gate": "PASS_WITH_PARALLEL_GATES",
+  "manuscript_drafting_readiness_percent": 92.0,
+  "scores": {
+    "research_question": 8.5,
+    "scientific_tension": 8.3,
+    "evidence_matching": 9.1,
+    "logic_chain": 8.6,
+    "method_reproducibility": 9.3,
+    "novelty_positioning": 7.0,
+    "risk_boundaries": 9.5,
+    "language_quality": 7.2,
+    "overall": 8.5
+  },
+  "submission_completion_percent": 84.0,
+  "technical_debts": [
+    "missing_v4_fitting_reproduction_script",
+    "transaction_level_payment_failure_calibration_data_unavailable",
+    "current_2026_topology_is_filtered_geolocated_high_capacity_projection_not_full_network",
+    "mathscinet_zbmath_scopus_wos_cnki_novelty_search_incomplete",
+    "no_complete_chinese_manuscript_draft",
+    "barnett_1964_full_text_model_kernel_not_verified"
+  ],
+  "proof_register": "06_theorem_proof_gap_register.md",
+  "last_completed": "t34_stopping_event_real_payment_non_equivalence_mapping",
+  "t34_stopping_event_mapping": {
+    "status": "PASS",
+    "semantic_result": "model boundary hit is not real payment failure; no universal equality or order without additional coupling assumptions",
+    "sequences_checked": 139968,
+    "indexing_violations": 0,
+    "protocol_sources": ["BOLT-02", "BOLT-04", "BOLT-07"],
+    "writing_blocker": false,
+    "independent_acceptance": "ACCEPT",
+    "blocking_issues": 0,
+    "nonblocking_issues": 5,
+    "nonblocking_remediation_closed": 5
+  },
+  "external_human_probability_review": {
+    "required_for_current_internal_closure": false,
+    "waived_by_author": true,
+    "waiver_date": "2026-07-24",
+    "note": "导师可选择学术审阅，但第三方专家签核不再作为代码复现和内部证明闭合的阻塞门槛。"
+  },
+  "advisor_reproduction_bundle": {
+    "path": "advisor_reproduction_bundle_zh_2026-07-24",
+    "language": "zh-CN",
+    "full_tests_passed": 113,
+    "full_tests_failed": 0,
+    "manifests_checked": 29,
+    "file_hashes_checked": 825,
+    "hash_errors": 0,
+    "status": "PASS"
+  },
+  "t19_internal_subagent_acceptance": {
+    "verdict": "ACCEPT",
+    "blocking_issues": 0,
+    "initial_nonblocking_issues": 5,
+    "remediation_closed": 5,
+    "remediation_open": 0,
+    "external_human_review": false
+  },
+  "t32_sign_mechanism_closure": {
+    "status": "PASS",
+    "scope": "post-primary finite-grid mechanism synthesis over eight frozen topology anchors",
+    "cell_count": 80,
+    "block_row_count": 3200,
+    "unique_seed_count": 80,
+    "global_mean_slope": -0.038857377854896014,
+    "global_mean_slope_ci": [-0.04226866226527797, -0.035446093444514055],
+    "date_cluster_count": 4,
+    "date_sign_flip_p_two_sided": 0.125,
+    "original_formal_precision_gate_pass": true,
+    "original_replication_precision_gate_pass": false,
+    "independent_acceptance": "ACCEPT",
+    "initial_blocking_issues": 1,
+    "remediation_closed": 1,
+    "open_blocking_issues": 0
+  },
+  "recommended_track": "theory_first_correlated_fixed_hypergraph_network",
+  "provisional_primary_venue": "中文学术期刊（待完成范围核验后确定）",
+  "venue_status": "chinese_target_not_yet_selected",
+  "historical_international_venue_options": [
+    "IEEE Transactions on Network and Service Management",
+    "IEEE Transactions on Networking",
+    "Advances in Applied Probability"
+  ]
+}

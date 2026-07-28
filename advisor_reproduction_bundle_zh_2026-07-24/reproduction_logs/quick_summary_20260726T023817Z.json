@@ -1,0 +1,10 @@
+{
+  "timestamp_utc": "20260726T023817Z",
+  "mode": "quick",
+  "python": "3.12.13 (main, Mar  3 2026, 15:01:35) [MSC v.1944 64 bit (AMD64)]",
+  "test_exit_code": 1,
+  "integrity_exit_code": 0,
+  "status": "FAIL",
+  "test_log": "quick_tests_20260726T023817Z.txt",
+  "integrity_log": "quick_integrity_20260726T023817Z.txt"
+}

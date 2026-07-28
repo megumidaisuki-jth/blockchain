@@ -1,0 +1,31 @@
+# Local agent and tool state
+.agents/
+.codex-manual-cache/
+.superpowers/
+.tmp/
+**/.tmp/
+
+# Python caches and local environments
+__pycache__/
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+
+# Office lock files and editor leftovers
+~$*
+*.tmp
+*.bak
+
+# Paper figures are versioned as PNG only
+*.tif
+*.tiff
+
+# Oversized upstream archive (selected snapshots and provenance remain tracked)
+data/raw/ln-geolocated-2019-2023/snapshots.geo.zip
+
+# OS metadata
+.DS_Store
+Thumbs.db

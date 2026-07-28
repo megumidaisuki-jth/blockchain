@@ -1,0 +1,10 @@
+{
+  "bundle_created_at": "2026-07-24",
+  "bundle_language": "zh-CN",
+  "reference_os": "Windows 11 / PowerShell",
+  "reference_python": "3.10.16",
+  "verification_policy": "deterministic code tests, exact anchors, independent-seed replications, and SHA-256 integrity checks",
+  "human_expert_signoff_required": false,
+  "image_policy": "PNG only",
+  "expected_full_test_count": 113
+}

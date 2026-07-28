@@ -1,0 +1,3 @@
+[direct_replication_interval_excludes_zero]
+[precision_halfwidth_exceeds_0.03]
+2026-07-22-primary-uniform-N20

@@ -1,0 +1,69 @@
+{
+  "artifact_kind": "post-primary-sign-mechanism-closure",
+  "claim_status": "finite-grid mechanistic synthesis; not a universal sign theorem",
+  "status": "PASS",
+  "weights": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "stage_count": 2,
+  "date_cluster_count": 4,
+  "anchor_count": 8,
+  "cell_count": 80,
+  "block_row_count": 3200,
+  "unique_seed_count": 80,
+  "global_fixed_anchor_slope": {
+    "n_blocks": 80,
+    "mean": -0.038857377854896014,
+    "standard_error": 0.0017138255420051727,
+    "simultaneous_critical": 1.9904502102301282,
+    "ci_low": -0.04226866226527797,
+    "ci_high": -0.035446093444514055,
+    "ci_halfwidth": 0.0034112844103819594
+  },
+  "global_endpoint_contrast_lambda1_minus_lambda0": {
+    "n_blocks": 80,
+    "mean": -0.03647092749931615,
+    "standard_error": 0.001944278706179726,
+    "simultaneous_critical": 1.9904502102301282,
+    "ci_low": -0.04034091745877755,
+    "ci_high": -0.032600937539854755,
+    "ci_halfwidth": 0.0038699899594613974
+  },
+  "negative_anchor_slope_count": 8,
+  "negative_date_slope_count": 4,
+  "date_cluster_exact_sign_flip_p_two_sided": 0.125,
+  "gates": {
+    "input_manifests_verified": true,
+    "complete_design": true,
+    "stage_seeds_disjoint": true,
+    "zero_censoring": true,
+    "route_increment_support_fixed_within_anchor": true,
+    "uniform_effect_simultaneously_positive": true,
+    "half_hotspot_effect_simultaneously_negative": true,
+    "hotspot_effect_simultaneously_negative": true,
+    "fixed_anchor_mean_slope_negative": true,
+    "fixed_anchor_endpoint_contrast_negative": true
+  },
+  "limitations": [
+    "the four dates, not the eight primary/hub anchors, are the conservative topology-time units",
+    "the date-cluster exact sign-flip p-value is descriptive because only four dates are available",
+    "route-probability interpolation changes drift, covariance, and higher increment moments together",
+    "the analysis covers frozen 31-node projections, synthetic shortest-path demand, N=40, unit payments, no retries, and no rebalancing",
+    "the stopping event is first directional balance depletion, not observed real-payment failure",
+    "the original replication precision gate failed for the 2026-primary anchor (maximum half-width exceeded 0.03); pooling does not erase that failure",
+    "the five-point mean curve is not strictly monotone between lambda=0.75 and lambda=1"
+  ],
+  "software": {
+    "python": "3.10.16",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "scipy": "1.15.3",
+    "matplotlib": "3.10.8"
+  },
+  "original_formal_slope_precision_gate_pass": true,
+  "original_replication_slope_precision_gate_pass": false
+}

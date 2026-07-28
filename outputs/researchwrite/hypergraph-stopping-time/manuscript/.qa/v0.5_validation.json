@@ -1,0 +1,1546 @@
+{
+  "status": "PASS",
+  "checks_passed": 35,
+  "checks_total": 35,
+  "inputs": {
+    "markdown": "E:\\newblockchain\\outputs\\researchwrite\\hypergraph-stopping-time\\manuscript\\相关超图支付通道网络的停止时间_通信学报格式_v0.5.md",
+    "markdown_sha256": "47d5999991233b2e8474b76abd353db8d3e7774500e2335324a16207b5916c2b",
+    "docx": "E:\\newblockchain\\outputs\\researchwrite\\hypergraph-stopping-time\\manuscript\\相关超图支付通道网络的停止时间_通信学报格式_v0.5.docx",
+    "docx_sha256": "4a3e6998d7a46b5ef33086c538080d35e78992556e0d02897c70e042f7dff385"
+  },
+  "metrics": {
+    "title_chinese_characters": 15,
+    "abstract_chinese_characters": 169,
+    "keyword_count": 6,
+    "reference_count": 27,
+    "omath_count": 225,
+    "display_formula_count": 41,
+    "inline_formula_count": 184,
+    "equation_tags": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "13",
+      "14",
+      "14a",
+      "15",
+      "16",
+      "17",
+      "18",
+      "19",
+      "20",
+      "21",
+      "22",
+      "23",
+      "24"
+    ],
+    "section_count": 10,
+    "column_counts": [
+      1,
+      2,
+      1,
+      2,
+      1,
+      2,
+      1,
+      2,
+      1,
+      2
+    ],
+    "media_suffixes": [
+      ".png",
+      ".png"
+    ]
+  },
+  "checks": [
+    {
+      "name": "中文标题不超过20字",
+      "pass": true,
+      "actual": 15,
+      "expected": "<=20"
+    },
+    {
+      "name": "中文摘要不超过200字",
+      "pass": true,
+      "actual": 169,
+      "expected": "<=200"
+    },
+    {
+      "name": "中文关键词不少于4个",
+      "pass": true,
+      "actual": 6,
+      "expected": ">=4"
+    },
+    {
+      "name": "参考文献连续编号",
+      "pass": true,
+      "actual": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "20",
+        "21",
+        "22",
+        "23",
+        "24",
+        "25",
+        "26",
+        "27"
+      ],
+      "expected": "1..27"
+    },
+    {
+      "name": "正文首次引文顺序",
+      "pass": true,
+      "actual": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ],
+      "expected": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ]
+    },
+    {
+      "name": "全部参考文献均在正文引出",
+      "pass": true,
+      "actual": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ],
+      "expected": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ]
+    },
+    {
+      "name": "冻结声明存在：T16对应定理1",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "冻结声明存在：T17漂移主导部分",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "冻结声明存在：T17集中界充分大N",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "冻结声明存在：T17指数矩充分大N",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "冻结声明存在：T17扩散部分",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "冻结声明存在：T18a对应定理4",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "冻结声明存在：T19对应定理5",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "冻结声明存在：T19离散相关均值",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "冻结声明存在：T19离散独立均值",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "冻结声明存在：N=3精确均值",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "冻结声明存在：2026样本单元",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "冻结声明存在：T32总体斜率",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "冻结声明存在：T34穷举数",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "冻结声明存在：停止量语义边界",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "禁止有限N普遍非负声明",
+      "pass": true,
+      "actual": [],
+      "expected": []
+    },
+    {
+      "name": "禁止真实支付失败等同声明",
+      "pass": true,
+      "actual": [],
+      "expected": []
+    },
+    {
+      "name": "禁止完整2026网络声明",
+      "pass": true,
+      "actual": [],
+      "expected": []
+    },
+    {
+      "name": "Markdown公式均转换为可编辑Word公式对象",
+      "pass": true,
+      "actual": 225,
+      "expected": 225
+    },
+    {
+      "name": "显示公式表数量与Markdown一致",
+      "pass": true,
+      "actual": 41,
+      "expected": 41
+    },
+    {
+      "name": "显示公式编号与源文件一致",
+      "pass": true,
+      "actual": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "14a",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "20",
+        "21",
+        "22",
+        "23",
+        "24"
+      ],
+      "expected": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "14a",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "20",
+        "21",
+        "22",
+        "23",
+        "24"
+      ]
+    },
+    {
+      "name": "显示公式表严格位于单栏宽度内",
+      "pass": true,
+      "actual": [
+        {
+          "table_width": 4580,
+          "grid_widths": [
+            4080,
+            500
+          ],
+          "cell_widths": [
+            4080,
+            500
+          ],
+          "cell_margins": [
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          ]
+        },
+        {
+          "table_width": 4580,
+          "grid_widths": [
+            4080,
+            500
+          ],
+          "cell_widths": [
+            4080,
+            500
+          ],
+          "cell_margins": [
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          ]
+        },
+        {
+          "table_width": 4580,
+          "grid_widths": [
+            4080,
+            500
+          ],
+          "cell_widths": [
+            4080,
+            500
+          ],
+          "cell_margins": [
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          ]
+        },
+        {
+          "table_width": 4580,
+          "grid_widths": [
+            4080,
+            500
+          ],
+          "cell_widths": [
+            4080,
+            500
+          ],
+          "cell_margins": [
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          ]
+        },
+        {
+          "table_width": 4580,
+          "grid_widths": [
+            4080,
+            500
+          ],
+          "cell_widths": [
+            4080,
+            500
+          ],
+          "cell_margins": [
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          ]
+        },
+        {
+          "table_width": 4580,
+          "grid_widths": [
+            4080,
+            500
+          ],
+          "cell_widths": [
+            4080,
+            500
+          ],
+          "cell_margins": [
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          ]
+        },
+        {
+          "table_width": 4580,
+          "grid_widths": [
+            4080,
+            500
+          ],
+          "cell_widths": [
+            4080,
+            500
+          ],
+          "cell_margins": [
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          ]
+        },
+        {
+          "table_width": 4580,
+          "grid_widths": [
+            4080,
+            500
+          ],
+          "cell_widths": [
+            4080,
+            500
+          ],
+          "cell_margins": [
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          ]
+        },
+        {
+          "table_width": 4580,
+          "grid_widths": [
+            4080,
+            500
+          ],
+          "cell_widths": [
+            4080,
+            500
+          ],
+          "cell_margins": [
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          ]
+        },
+        {
+          "table_width": 4580,
+          "grid_widths": [
+            4080,
+            500
+          ],
+          "cell_widths": [
+            4080,
+            500
+          ],
+          "cell_margins": [
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          ]
+        },
+        {
+          "table_width": 4580,
+          "grid_widths": [
+            4080,
+            500
+          ],
+          "cell_widths": [
+            4080,
+            500
+          ],
+          "cell_margins": [
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          ]
+        },
+        {
+          "table_width": 4580,
+          "grid_widths": [
+            4080,
+            500
+          ],
+          "cell_widths": [
+            4080,
+            500
+          ],
+          "cell_margins": [
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          ]
+        },
+        {
+          "table_width": 4580,
+          "grid_widths": [
+            4080,
+            500
+          ],
+          "cell_widths": [
+            4080,
+            500
+          ],
+          "cell_margins": [
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          ]
+        },
+        {
+          "table_width": 4580,
+          "grid_widths": [
+            4080,
+            500
+          ],
+          "cell_widths": [
+            4080,
+            500
+          ],
+          "cell_margins": [
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          ]
+        },
+        {
+          "table_width": 4580,
+          "grid_widths": [
+            4080,
+            500
+          ],
+          "cell_widths": [
+            4080,
+            500
+          ],
+          "cell_margins": [
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          ]
+        },
+        {
+          "table_width": 4580,
+          "grid_widths": [
+            4080,
+            500
+          ],
+          "cell_widths": [
+            4080,
+            500
+          ],
+          "cell_margins": [
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          ]
+        },
+        {
+          "table_width": 4580,
+          "grid_widths": [
+            4080,
+            500
+          ],
+          "cell_widths": [
+            4080,
+            500
+          ],
+          "cell_margins": [
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          ]
+        },
+        {
+          "table_width": 4580,
+          "grid_widths": [
+            4080,
+            500
+          ],
+          "cell_widths": [
+            4080,
+            500
+          ],
+          "cell_margins": [
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          ]
+        },
+        {
+          "table_width": 4580,
+          "grid_widths": [
+            4080,
+            500
+          ],
+          "cell_widths": [
+            4080,
+            500
+          ],
+          "cell_margins": [
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          ]
+        },
+        {
+          "table_width": 4580,
+          "grid_widths": [
+            4080,
+            500
+          ],
+          "cell_widths": [
+            4080,
+            500
+          ],
+          "cell_margins": [
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          ]
+        },
+        {
+          "table_width": 4580,
+          "grid_widths": [
+            4080,
+            500
+          ],
+          "cell_widths": [
+            4080,
+            500
+          ],
+          "cell_margins": [
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          ]
+        },
+        {
+          "table_width": 4580,
+          "grid_widths": [
+            4080,
+            500
+          ],
+          "cell_widths": [
+            4080,
+            500
+          ],
+          "cell_margins": [
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          ]
+        },
+        {
+          "table_width": 4580,
+          "grid_widths": [
+            4080,
+            500
+          ],
+          "cell_widths": [
+            4080,
+            500
+          ],
+          "cell_margins": [
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          ]
+        },
+        {
+          "table_width": 4580,
+          "grid_widths": [
+            4080,
+            500
+          ],
+          "cell_widths": [
+            4080,
+            500
+          ],
+          "cell_margins": [
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          ]
+        },
+        {
+          "table_width": 4580,
+          "grid_widths": [
+            4080,
+            500
+          ],
+          "cell_widths": [
+            4080,
+            500
+          ],
+          "cell_margins": [
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          ]
+        },
+        {
+          "table_width": 4580,
+          "grid_widths": [
+            4080,
+            500
+          ],
+          "cell_widths": [
+            4080,
+            500
+          ],
+          "cell_margins": [
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          ]
+        },
+        {
+          "table_width": 4580,
+          "grid_widths": [
+            4080,
+            500
+          ],
+          "cell_widths": [
+            4080,
+            500
+          ],
+          "cell_margins": [
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          ]
+        },
+        {
+          "table_width": 4580,
+          "grid_widths": [
+            4080,
+            500
+          ],
+          "cell_widths": [
+            4080,
+            500
+          ],
+          "cell_margins": [
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          ]
+        },
+        {
+          "table_width": 4580,
+          "grid_widths": [
+            4080,
+            500
+          ],
+          "cell_widths": [
+            4080,
+            500
+          ],
+          "cell_margins": [
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          ]
+        },
+        {
+          "table_width": 4580,
+          "grid_widths": [
+            4080,
+            500
+          ],
+          "cell_widths": [
+            4080,
+            500
+          ],
+          "cell_margins": [
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          ]
+        },
+        {
+          "table_width": 4580,
+          "grid_widths": [
+            4080,
+            500
+          ],
+          "cell_widths": [
+            4080,
+            500
+          ],
+          "cell_margins": [
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          ]
+        },
+        {
+          "table_width": 4580,
+          "grid_widths": [
+            4080,
+            500
+          ],
+          "cell_widths": [
+            4080,
+            500
+          ],
+          "cell_margins": [
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          ]
+        },
+        {
+          "table_width": 4580,
+          "grid_widths": [
+            4080,
+            500
+          ],
+          "cell_widths": [
+            4080,
+            500
+          ],
+          "cell_margins": [
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          ]
+        },
+        {
+          "table_width": 4580,
+          "grid_widths": [
+            4080,
+            500
+          ],
+          "cell_widths": [
+            4080,
+            500
+          ],
+          "cell_margins": [
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          ]
+        },
+        {
+          "table_width": 4580,
+          "grid_widths": [
+            4080,
+            500
+          ],
+          "cell_widths": [
+            4080,
+            500
+          ],
+          "cell_margins": [
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          ]
+        },
+        {
+          "table_width": 4580,
+          "grid_widths": [
+            4080,
+            500
+          ],
+          "cell_widths": [
+            4080,
+            500
+          ],
+          "cell_margins": [
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          ]
+        },
+        {
+          "table_width": 4580,
+          "grid_widths": [
+            4080,
+            500
+          ],
+          "cell_widths": [
+            4080,
+            500
+          ],
+          "cell_margins": [
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          ]
+        },
+        {
+          "table_width": 4580,
+          "grid_widths": [
+            4080,
+            500
+          ],
+          "cell_widths": [
+            4080,
+            500
+          ],
+          "cell_margins": [
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          ]
+        },
+        {
+          "table_width": 4580,
+          "grid_widths": [
+            4080,
+            500
+          ],
+          "cell_widths": [
+            4080,
+            500
+          ],
+          "cell_margins": [
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          ]
+        },
+        {
+          "table_width": 4580,
+          "grid_widths": [
+            4080,
+            500
+          ],
+          "cell_widths": [
+            4080,
+            500
+          ],
+          "cell_margins": [
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          ]
+        },
+        {
+          "table_width": 4580,
+          "grid_widths": [
+            4080,
+            500
+          ],
+          "cell_widths": [
+            4080,
+            500
+          ],
+          "cell_margins": [
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          ]
+        }
+      ],
+      "expected": {
+        "table_width": 4580,
+        "grid_widths": [
+          4080,
+          500
+        ],
+        "cell_widths": [
+          4080,
+          500
+        ],
+        "cell_margins": [
+          {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "Word公式无未转换控制词",
+      "pass": true,
+      "actual": [],
+      "expected": []
+    },
+    {
+      "name": "Word正文无替换字符U+FFFD",
+      "pass": true,
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "name": "连续分节数量",
+      "pass": true,
+      "actual": 10,
+      "expected": 10
+    },
+    {
+      "name": "单双栏分节序列",
+      "pass": true,
+      "actual": [
+        1,
+        2,
+        1,
+        2,
+        1,
+        2,
+        1,
+        2,
+        1,
+        2
+      ],
+      "expected": [
+        1,
+        2,
+        1,
+        2,
+        1,
+        2,
+        1,
+        2,
+        1,
+        2
+      ]
+    },
+    {
+      "name": "稿件仅嵌入两张PNG图片",
+      "pass": true,
+      "actual": [
+        ".png",
+        ".png"
+      ],
+      "expected": [
+        ".png",
+        ".png"
+      ]
+    },
+    {
+      "name": "无动态域残留",
+      "pass": true,
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "name": "DOCX ZIP CRC完整",
+      "pass": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "DOCX内部关系目标完整",
+      "pass": true,
+      "actual": [],
+      "expected": []
+    }
+  ]
+}

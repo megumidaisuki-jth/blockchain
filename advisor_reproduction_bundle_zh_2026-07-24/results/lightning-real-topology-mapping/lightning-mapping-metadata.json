@@ -1,0 +1,30 @@
+{
+  "artifact_kind": "real-topology-synthetic-demand-mapping",
+  "source_dataset_doi": "10.7910/DVN/2OAVO6",
+  "source_archive_md5": "e6edd6fd7acae460abd0f70f71c9dbec",
+  "source_archive_sha256": "f380b71796edd86019ddc0b7822938559bfd40a2f650b21ccb66f14ef10e9320",
+  "snapshot_count": 3,
+  "subgraph_count": 6,
+  "kernel_count": 12,
+  "node_rows": 186,
+  "channel_rows": 202,
+  "route_rows": 11304,
+  "node_count_per_subgraph": 31,
+  "modes": [
+    "primary",
+    "hub"
+  ],
+  "demand_kinds": [
+    "uniform",
+    "hotspot"
+  ],
+  "all_shape_gates_pass": true,
+  "all_kernel_gates_pass": true,
+  "claim_boundary": "real topology, transparent synthetic demand; not observed flows or balances",
+  "runtime_seconds": 30.381534800000054,
+  "software": {
+    "python": "3.10.16",
+    "numpy": "2.2.6",
+    "networkx": "3.4.2"
+  }
+}

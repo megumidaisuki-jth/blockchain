@@ -1,0 +1,4 @@
+case,initial_scale,route_sequence,model_boundary_time,first_rejection_time,relation
+balance_rejection_after_boundary,1,"c0_forward,c0_forward",1,2,rejection_after_boundary
+policy_rejection_before_boundary,2,"c0_forward,c0_forward",2,1,rejection_before_boundary
+reverse_flow_restores_boundary,1,"c0_forward,c0_reverse,c0_forward,c0_reverse,c0_forward,c0_reverse,c0_forward,c0_reverse",1,,no_rejection_within_horizon

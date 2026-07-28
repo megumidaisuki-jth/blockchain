@@ -1,0 +1,3 @@
+a8d732565b0d47ae69a95b7b2547ac86f4aa55d782ae982d691b9c6ca07007de  lightning-current-2026-replication-comparison.csv
+bd4766ddb612133abf8eb61565b4c1aba46ebd6663c9be4c2f483d71bf52dd01  lightning-current-2026-replication-failing-cells.txt
+34717bbbb80e4a203dd947adc3d4ab360bd89c441157dffaff116c65ca951559  lightning-current-2026-replication-comparison-metadata.json

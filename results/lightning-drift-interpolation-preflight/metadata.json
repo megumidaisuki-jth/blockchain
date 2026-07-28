@@ -1,0 +1,18 @@
+{
+  "artifact_kind": "drift-interpolation-preflight-planning-only",
+  "cell_count": 10,
+  "repetitions_per_cell": 2000,
+  "block_count": 40,
+  "scale": 40,
+  "censored_count": 0,
+  "maximum_block_ci_halfwidth": 0.128221699807951,
+  "planned_formal_repetitions_per_cell": 36560,
+  "precision_target": 0.03,
+  "total_runtime_seconds": 113.16672459999972,
+  "software": {
+    "python": "3.10.16",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "numba": "0.62.1"
+  }
+}

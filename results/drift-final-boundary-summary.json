@@ -1,0 +1,17 @@
+{
+  "scenario_count": 384,
+  "mean_absolute_relative_error": 0.007398921055636446,
+  "p95_absolute_relative_error": 0.01848432745710561,
+  "max_absolute_relative_error": 0.028606308773469404,
+  "rms_relative_error": 0.00934225282455207,
+  "mean_signed_relative_error": 0.0003413901470431978,
+  "fraction_point_error_within_04": 1.0,
+  "fraction_point_error_within_05": 1.0,
+  "fraction_simultaneous_upper_within_05": 1.0,
+  "max_uncertainty_aware_error_upper": 0.045184166201218234,
+  "simultaneous_z": 3.8260642226222594,
+  "run_id": "boundary-v1-9e4cfdbcfe51",
+  "formula_sha256": "fc6ed5692c5e33a9fffe770a3a11e12d0b94dbf5a1eec4c0ae7c81aee87c07d7",
+  "validator_sha256": "7bd17439943bee509526fbdfe1d93ff9932f73ad9df6491b8f1f8ec4403671a0",
+  "grid_sha256": "9e4cfdbcfe51b861989860b1103b492b54c14c8516d71574938533c2ca8332df"
+}

@@ -1,0 +1,36 @@
+{
+  "artifact_kind": "current-2026-filtered-topology-formal",
+  "claim_boundary": "current filtered high-capacity geolocated projection; finite-grid evidence only",
+  "repetitions_per_cell": 55200,
+  "block_size": 1380,
+  "block_count_per_cell": 40,
+  "comparisons": 16,
+  "cell_count": 16,
+  "unique_seed_count": 16,
+  "checkpoint_hits": 0,
+  "censored_count": 0,
+  "maximum_block_ci_halfwidth": 0.033320651151270926,
+  "precision_target": 0.03,
+  "precision_gate_pass": false,
+  "maximum_cell_runtime_seconds": 2043.0885175000003,
+  "sum_cell_runtime_seconds": 5094.673898299996,
+  "wall_runtime_seconds": 5095.950740100001,
+  "source_sha256": "fbddddc486a8bb644520c373fd9588dc3811a6414c77185f0b2e8740e338637b",
+  "source_shape": {
+    "record_count": 10000,
+    "unique_undirected_pair_count": 9999,
+    "duplicate_undirected_pair_count": 1,
+    "node_count": 1277,
+    "edge_count": 9999,
+    "component_count": 3,
+    "largest_component_node_count": 1273,
+    "largest_component_edge_count": 9997
+  },
+  "software": {
+    "python": "3.10.16",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "networkx": "3.4.2",
+    "numba": "0.62.1"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "artifact_kind": "post-primary-pooled-independent-seed-precision-sensitivity",
+  "label": "lightning-current-2026",
+  "not_a_replacement_for_primary_runs": true,
+  "comparisons": 16,
+  "cell_count": 16,
+  "seed_sets_disjoint": true,
+  "pooled_block_count_per_cell": 80,
+  "total_repetitions_per_cell": 110400,
+  "precision_target": 0.03,
+  "maximum_pooled_ci_halfwidth": 0.020173286581341827,
+  "all_pooled_precision_gates_pass": true,
+  "failure_count": 0,
+  "failure_cells": [],
+  "input_sha256": {
+    "primary_summary": "4fc01c0231673ab360832ad13aa03b574dce6557146ee0a62265a2b2b91ea61c",
+    "replication_summary": "567cb3d81bbb0fc982b8d1cd48d42aadaf4633bb0445bd104f1d79ff4d651577",
+    "primary_blocks": "b721796e27e1ae942ba9c5af939b6d4ce97499dd2889315b7cb073fab4c543bb",
+    "replication_blocks": "269409506bbc5ee953aba7fb8fb1e30f20a23fbc4d0a6d4f637b83ade1453684"
+  },
+  "software": {
+    "python": "3.10.16",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3"
+  }
+}

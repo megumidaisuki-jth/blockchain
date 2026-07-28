@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "scope": "semantic/indexing validation; not empirical Lightning failure calibration",
+  "proposition": "Under the ideal unit-route contract, the route that first reaches zero is accepted from a strictly positive pre-route state; any balance-only rejection is strictly later if it occurs.",
+  "exhaustive_audit": {
+    "max_scale": 3,
+    "horizon": 6,
+    "route_alphabet_size": 6,
+    "sequences_checked": 139968,
+    "boundary_hits_observed": 110308,
+    "balance_rejections_observed": 71688,
+    "violations": 0
+  },
+  "illustrative_case_count": 3,
+  "gates": {
+    "no_indexing_violations": true,
+    "later_rejection_witness": true,
+    "earlier_policy_failure_witness": true,
+    "reverse_restoration_witness": true
+  }
+}

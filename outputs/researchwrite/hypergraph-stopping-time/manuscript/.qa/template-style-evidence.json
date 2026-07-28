@@ -1,0 +1,80 @@
+{
+  "input": "E:\\newblockchain\\outputs\\researchwrite\\hypergraph-stopping-time\\manuscript\\\u300a\u901a\u4fe1\u5b66\u62a5\u300b\u5b98\u65b9\u6b63\u6587\u6a21\u677f_2026-04-20.docx",
+  "fonts_by_char_count": {
+    "\u9ed1\u4f53": 21
+  },
+  "direct_run_formatting_runs": 137,
+  "direct_paragraph_formatting_paragraphs": 127,
+  "heading_like_paragraphs_not_heading_style": [
+    {
+      "para_index": 34,
+      "text": "\u88681\t4\u79cd\u8ddd\u79bb\u8ba1\u7b97\u65b9\u6cd5\u7684\u6210\u529f\u7387\u548c\u8bef\u5dee",
+      "style": "\u8868\u9898"
+    },
+    {
+      "para_index": 58,
+      "text": "\u88682\t\u7b26\u53f7\u8bf4\u660e",
+      "style": "\u8868\u9898"
+    }
+  ],
+  "examples": {
+    "direct_run_formatting": [
+      {
+        "para_index": 1,
+        "run_text": "Wi-Fi",
+        "style": "Heading 1"
+      },
+      {
+        "para_index": 4,
+        "run_text": "\u6458",
+        "style": "\u6458\u8981"
+      },
+      {
+        "para_index": 4,
+        "run_text": "  ",
+        "style": "\u6458\u8981"
+      },
+      {
+        "para_index": 4,
+        "run_text": "\u8981\uff1a",
+        "style": "\u6458\u8981"
+      },
+      {
+        "para_index": 4,
+        "run_text": "k",
+        "style": "\u6458\u8981"
+      }
+    ],
+    "direct_paragraph_formatting": [
+      {
+        "para_index": 3,
+        "text": "\uff081. \u897f\u5b89\u90ae\u7535\u5927\u5b66\u7f51\u7edc\u7a7a\u95f4\u5b89\u5168\u5b66\u9662\uff0c\u9655\u897f \u897f\u5b89 710121\uff1b2. \u9752\u6d77\u5e08\u8303\u5927\u5b66\u8ba1\u7b97\u673a\u5b66\u9662\uff0c\u9752\u6d77 \u897f\u5b81 810016\uff1b\n3. \u897f\u5b89\u7535\u5b50\u79d1\u6280\u5927\u5b66\u7f51\u7edc\u4e0e\u4fe1\u606f\u5b89\u5168\u5b66\u9662\uff0c\u9655\u897f \u897f\u5b89 710126\uff09",
+        "style": "\u5730\u540d"
+      },
+      {
+        "para_index": 4,
+        "text": "\u6458  \u8981\uff1a\u4e3a\u4e86\u89e3\u51b3\u5ba4\u5185\u5b9a\u4f4d\u4e2d\u7528\u6237\u548c\u670d\u52a1\u5668\u53cc\u65b9\u7684\u9690\u79c1\u4fdd\u62a4\u95ee\u9898\uff0c\u63d0\u51fa\u4e86\u4e00\u79cd\u5728\u4f7f\u7528Paillier\u52a0\u5bc6\u7684\u8fc7\u7a0b\u4e2d\u5c06\u90e8\u5206\u8ba1\u7b97\u5916\u5305\u7ed9\u4e91\u670d\u52a1\u5668\u7684\u65b9\u6848\uff0c\u8fd9\u4e0d\u4ec5\u4fdd\u62a4\u4e86\u7528\u6237\u548c\u5b9a\u4f4d\u670d\u52a1\u5668\u7684\u9690\u79c1\uff0c\u800c\u4e14\u907f\u514d\u4e86\u4ea7\u751f\u8fc7\u5927\u7684\u8ba1\u7b97\u548c\u901a\u4fe1\u5f00\u9500\u3002\u8be5\u65b9\u6848\u7684\u4e3b\u8981\u601d\u60f3\u662f\u670d\u52a1\u5668\u5148\u5728\u79bb\u7ebf",
+        "style": "\u6458\u8981"
+      },
+      {
+        "para_index": 5,
+        "text": "\u5173\u952e\u8bcd\uff1aWi-Fi\u6307\u7eb9\uff1b\u8ba1\u7b97\u5916\u5305\uff1b\u4e91\u670d\u52a1\uff1bPaillier\u52a0\u5bc6",
+        "style": "\u6458\u8981"
+      },
+      {
+        "para_index": 6,
+        "text": "\u4e2d\u56fe\u5206\u7c7b\u53f7\uff1aTP309",
+        "style": "\u6458\u8981"
+      },
+      {
+        "para_index": 7,
+        "text": "\u6587\u732e\u6807\u5fd7\u7801\uff1aA",
+        "style": "\u6458\u8981"
+      }
+    ]
+  },
+  "notes": [
+    "Direct formatting is not always wrong, but it often causes inconsistent output when templates change.",
+    "Heading-like paragraphs not using Heading styles can break TOC and accessibility."
+  ]
+}

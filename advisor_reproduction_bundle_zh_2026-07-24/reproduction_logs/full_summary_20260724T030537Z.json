@@ -1,0 +1,10 @@
+{
+  "timestamp_utc": "20260724T030537Z",
+  "mode": "full",
+  "python": "3.10.16 | packaged by Anaconda, Inc. | (main, Dec 11 2024, 16:19:12) [MSC v.1929 64 bit (AMD64)]",
+  "test_exit_code": 0,
+  "integrity_exit_code": 0,
+  "status": "PASS",
+  "test_log": "full_tests_20260724T030537Z.txt",
+  "integrity_log": "full_integrity_20260724T030537Z.txt"
+}

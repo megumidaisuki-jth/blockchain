@@ -1,0 +1,3 @@
+584f83488381b08d952046a31691304e67351434016aaa0c6685ea170cd43cdc  lightning-current-2026-preflight.csv
+41056634e4b87bbcee2e9e96fb64109359e4ff2fcab1cb9827a11a2fc01430fc  lightning-current-2026-preflight-blocks.csv
+b8f7e69cbebff842f81375627660ec49fa60bbc1745dbf9eca6bb98b2c73687f  lightning-current-2026-preflight-metadata.json

@@ -1,0 +1,22 @@
+{
+  "scenario_count": 2112,
+  "unique_k_count": 48,
+  "k_min": 3,
+  "k_max": 50,
+  "mean_absolute_relative_error_percent": 0.680031347236103,
+  "p95_absolute_relative_error_percent": 1.9057983852172877,
+  "rms_relative_error_percent": 0.9178114487612928,
+  "max_absolute_relative_error_percent": 3.8395381136912854,
+  "max_uncertainty_aware_error_upper_percent": 4.999455560645771,
+  "source_counts": {
+    "boundary_confirmation": 384,
+    "blind2": 1710,
+    "fresh_precision_confirmation": 18
+  },
+  "figure3_subset_rule": {
+    "scaling_panels": "N in {14,56,112}; p in {0.325,0.94,1,1.06,1.875}; all k",
+    "drift_profile": "N=56; k in {3,10,30,50}; all available internal p",
+    "reason": "representative negative, near-neutral, neutral and positive drift curves at three capacity scales"
+  },
+  "uncertainty_note": "Bonferroni-normal large-sample simultaneous intervals; not distribution-free finite-sample guarantees"
+}

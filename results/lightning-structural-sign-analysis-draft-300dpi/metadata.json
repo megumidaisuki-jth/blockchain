@@ -1,0 +1,21 @@
+{
+  "artifact_kind": "post-primary-structural-sign-analysis",
+  "claim_status": "exploratory; theorem-motivating, not preregistered confirmatory evidence",
+  "kernel_count": 16,
+  "cell_count": 64,
+  "anchor_count": 8,
+  "date_cluster_count": 4,
+  "negative_anchor_contrast_count": 8,
+  "negative_scale_contrast_count": 31,
+  "scale_contrast_count": 32,
+  "mean_anchor_contrast": -0.026222470611129957,
+  "median_anchor_contrast": -0.02814894960795966,
+  "anchor_exact_sign_flip_p_two_sided": 0.0078125,
+  "date_cluster_exact_sign_flip_p_two_sided": 0.125,
+  "limitations": [
+    "primary and hub anchors from the same date are not fully independent",
+    "only four date clusters are available",
+    "hotspot demand differs from uniform demand in more than drift magnitude",
+    "pooled effects are post-primary sensitivity estimates"
+  ]
+}

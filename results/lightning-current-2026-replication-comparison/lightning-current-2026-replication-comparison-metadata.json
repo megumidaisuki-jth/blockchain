@@ -1,0 +1,30 @@
+{
+  "artifact_kind": "current-2026-independent-replication-comparison",
+  "claim_boundary": "current filtered high-capacity geolocated projection; finite-grid evidence only",
+  "cell_count": 16,
+  "comparisons": 16,
+  "seeds_disjoint": true,
+  "formal_manifest_entries": 19,
+  "replication_manifest_entries": 19,
+  "all_direct_intervals_contain_zero": true,
+  "direct_failure_count": 0,
+  "direct_failure_cells": [],
+  "both_precision_gates_pass": false,
+  "precision_failure_count": 1,
+  "precision_failure_cells": [
+    "2026-07-22-primary-uniform-N20"
+  ],
+  "overall_gate_pass": false,
+  "maximum_absolute_replication_difference": 0.028570301177536235,
+  "root_mean_squared_replication_difference": 0.00927835675841284,
+  "effect_correlation": 0.9390395573425485,
+  "formal_precision_gate_pass": false,
+  "replication_precision_gate_pass": true,
+  "formal_input_sha256": "4fc01c0231673ab360832ad13aa03b574dce6557146ee0a62265a2b2b91ea61c",
+  "replication_input_sha256": "567cb3d81bbb0fc982b8d1cd48d42aadaf4633bb0445bd104f1d79ff4d651577",
+  "software": {
+    "python": "3.10.16",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3"
+  }
+}

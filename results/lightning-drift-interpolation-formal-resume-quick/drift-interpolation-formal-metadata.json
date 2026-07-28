@@ -1,0 +1,27 @@
+{
+  "artifact_kind": "drift-interpolation-formal",
+  "cell_count": 40,
+  "anchor_count": 8,
+  "repetitions_per_cell": 80,
+  "block_size": 2,
+  "block_count": 40,
+  "checkpoint_hits": 40,
+  "censored_count": 0,
+  "unique_seed_count": 40,
+  "maximum_anchor_slope_ci_halfwidth": 0.4855870954229751,
+  "slope_precision_target": 0.03,
+  "slope_precision_gate_pass": false,
+  "fixed_anchor_mean_slope": -0.046399218750000006,
+  "fixed_anchor_mean_slope_ci_low": -0.15410107399855127,
+  "fixed_anchor_mean_slope_ci_high": 0.061302636498551256,
+  "maximum_affine_drift_residual": 1.1763593571467723e-16,
+  "sum_cell_runtime_seconds": 11.68305539999892,
+  "wall_runtime_seconds": 34.28377309999996,
+  "software": {
+    "python": "3.10.16",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "networkx": "3.4.2",
+    "numba": "0.62.1"
+  }
+}

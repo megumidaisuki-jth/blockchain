@@ -1,0 +1,2 @@
+6a483b31da4bd1023d49ac0a311f244e6e1597b25c6c945ec2cd8960bca1e9e2  t18-exact-anchor-metadata.json
+b9ada3e30ca5ea82e1d5bc4683f0370570c22a610868f2bfc36b8879bf54734d  t18-exact-anchors.csv
