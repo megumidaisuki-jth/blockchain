@@ -1,10 +1,10 @@
 {
   "project": "hypergraph-stopping-time",
-  "objective": "发表中文论文《相关超图支付通道网络的停止时间》",
+  "objective": "发表中文论文《原子路由下超图支付通道网络的首次耗尽时间》",
   "mode": "hybrid",
   "phase": "chinese_journal_manuscript_revision",
-  "status": "v0.5_double_independently_accepted_internal_review_ready",
-  "updated": "2026-07-26",
+  "status": "v0.6.1_academic_rewrite_validated_and_visual_checked",
+  "updated": "2026-07-28",
   "publication_readiness": false,
   "target_venue": {
     "name": "通信学报",
@@ -14,15 +14,15 @@
   },
   "manuscript": {
     "language": "zh-CN",
-    "version": "v0.5",
-    "markdown": "manuscript/相关超图支付通道网络的停止时间_通信学报格式_v0.5.md",
-    "docx": "manuscript/相关超图支付通道网络的停止时间_通信学报格式_v0.5.docx",
-    "title_chinese_characters": 15,
-    "abstract_chinese_characters": 169,
+    "version": "v0.6.1",
+    "markdown": "manuscript/原子路由下超图支付通道网络的首次耗尽时间_通信学报格式_v0.6.1.md",
+    "docx": "manuscript/原子路由下超图支付通道网络的首次耗尽时间_通信学报格式_v0.6.1.docx",
+    "title_chinese_characters": 20,
+    "abstract_chinese_characters": 198,
     "keyword_count": 6,
     "reference_count": 27,
-    "page_estimate_in_word": 9,
-    "word_character_count": 11254,
+    "page_estimate_in_word": 12,
+    "word_character_count": 20922,
     "author_metadata_complete": false,
     "fund_metadata_complete": false
   },
@@ -31,20 +31,20 @@
       "status": "PASS",
       "checks_passed": 35,
       "checks_failed": 0,
-      "report": "manuscript/.qa/v0.5_validation.json"
+      "report": "manuscript/.qa/manuscript_validation_v0.6.1.json"
     },
     "word_math": {
-      "status": "PASS_INDEPENDENT_CONTENT_AND_LAYOUT",
-      "editable_omath_objects": 225,
-      "display_formulas": 41,
-      "inline_formulas": 184,
+      "status": "PASS_CONTENT_AND_LAYOUT",
+      "editable_omath_objects": 268,
+      "display_formulas": 40,
+      "inline_formulas": 228,
       "numbered_formulas": 25,
-      "formula_fingerprint_matches": "225/225",
-      "formula_table_geometry": "41/41 at 4580 DXA with 4080+500 fixed cells",
-      "formula_cell_margins": "41/41 both cells top/left/bottom/right = 0 DXA",
+      "formula_fingerprint_matches": "268/268",
+      "formula_table_geometry": "40/40 at 4580 DXA with 4080+500 fixed cells",
+      "formula_cell_margins": "40/40 both cells top/left/bottom/right = 0 DXA",
       "unconverted_control_words": 0,
       "replacement_characters": 0,
-      "report": "../../../advisor_reproduction_bundle_zh_2026-07-24/formula_validation_code/formula_audit_v0.5.json"
+      "report": "manuscript/.qa/formula_audit_v0.6.1.json"
     },
     "references": {
       "first_citation_order": "1..27",
@@ -53,13 +53,13 @@
       "full_two_source_final_audit": false,
       "report": "manuscript/.qa/reference-verification-v0.2.md"
     },
-    "independent_subagent_reacceptance": {
+    "prior_independent_subagent_reacceptance": {
+      "version": "v0.5",
       "mathematics": "ACCEPT_0_BLOCKERS",
       "formula_content_and_layout": "ACCEPT_0_BLOCKERS"
     },
-    "independent_subagent_blocking_issues": 0,
-    "latest_visual_render_pass": false,
-    "visual_evidence": "v0.3 Word UI key-page spot check passed; v0.5 structural layout audit passed; canonical DOCX-to-PNG render unavailable because soffice is not installed"
+    "latest_visual_render_pass": true,
+    "visual_evidence": "v0.6.1 rendered by Microsoft Word to 12 page PNGs; all pages visually inspected with no overflow, clipping, garbling, or column-switch defect"
   },
   "scientific_closure": {
     "key_theorems": "independently_accepted_with_explicit_scope_boundaries",
@@ -81,15 +81,14 @@
   },
   "progress_percent": {
     "key_proof_and_experiment_closure": 99,
-    "journal_manuscript_content": 94,
-    "advisor_review_readiness": 95,
-    "overall_project": 94
+    "journal_manuscript_content": 98,
+    "advisor_review_readiness": 98,
+    "overall_project": 96
   },
   "remaining_before_advisor_review_final": [
     "full_two_source_reference_audit",
     "author_affiliation_fund_and_classification_metadata",
-    "author_review_and_content_feedback_on_v0.5",
-    "canonical_page_render_or_equivalent final visual check when a renderer is available"
+    "author_review_and_content_feedback_on_v0.6.1"
   ],
   "remaining_before_submission": [
     "institutional_database_novelty_search",

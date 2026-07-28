@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Validate the v0.1 Chinese journal manuscript and its DOCX package.
+"""Validate a Chinese journal manuscript and its DOCX package.
 
 This is a deterministic structural/content gate.  It does not replace peer review;
-it checks the frozen claims, journal-facing metadata limits, and Word package shape.
+it checks the key claims, journal-facing metadata limits, and Word package shape.
 """
 
 from __future__ import annotations
@@ -102,7 +102,7 @@ def main() -> int:
 
     compact_text = re.sub(r"\s+", "", md_text)
     required_fragments = {
-        "T16对应定理1": "定理1有限网络精确方程",
+        "T16对应定理1": "定理1有限网络吸收方程",
         "T17漂移主导部分": "定理2漂移主导区",
         "T17集中界充分大N": r"N\geN_\varepsilon\)满足",
         "T17指数矩充分大N": r"\sup_{N\geN_0}",
@@ -115,10 +115,10 @@ def main() -> int:
         "2026样本单元": "110400",
         "T32总体斜率": "-0.03885738",
         "T34穷举数": "139968",
-        "停止量语义边界": "不等同于真实支付失败",
+        "停止量语义边界": "不等同于现实支付失败",
     }
     for name, fragment in required_fragments.items():
-        check(fragment in compact_text, f"冻结声明存在：{name}", fragment in compact_text, True, checks)
+        check(fragment in compact_text, f"关键声明存在：{name}", fragment in compact_text, True, checks)
 
     forbidden_patterns = {
         "禁止有限N普遍非负声明": r"有限(?:规模|N).{0,12}(?:普遍|总是|必然).{0,8}(?:非负|不短)",
@@ -251,8 +251,13 @@ def main() -> int:
     )
     check(not omath_bad_controls, "Word公式无未转换控制词", omath_bad_controls, [], checks)
     check(replacement_character_count == 0, "Word正文无替换字符U+FFFD", replacement_character_count, 0, checks)
-    check(len(sect_prs) == 10, "连续分节数量", len(sect_prs), 10, checks)
-    check(column_counts == [1, 2, 1, 2, 1, 2, 1, 2, 1, 2], "单双栏分节序列", column_counts, [1, 2, 1, 2, 1, 2, 1, 2, 1, 2], checks)
+    full_width_artifact_count = len(re.findall(r"^\*\*表\d+", md_text, flags=re.MULTILINE)) + len(
+        re.findall(r"^!\[", md_text, flags=re.MULTILINE)
+    )
+    expected_section_count = 2 + 2 * full_width_artifact_count
+    expected_column_counts = [1, 2] + [value for _ in range(full_width_artifact_count) for value in (1, 2)]
+    check(len(sect_prs) == expected_section_count, "连续分节数量", len(sect_prs), expected_section_count, checks)
+    check(column_counts == expected_column_counts, "单双栏分节序列", column_counts, expected_column_counts, checks)
     check(media_suffixes == [".png", ".png"], "稿件仅嵌入两张PNG图片", media_suffixes, [".png", ".png"], checks)
     check(field_count == 0, "无动态域残留", field_count, 0, checks)
     check(zip_crc_error is None, "DOCX ZIP CRC完整", zip_crc_error, None, checks)

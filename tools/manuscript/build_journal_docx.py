@@ -330,16 +330,25 @@ def parse_markdown(md_path: Path, reference: Path, output: Path) -> None:
     shutil.copy2(reference, output)
     doc = Document(output)
     clear_reference_body(doc)
+    lines = md_path.read_text(encoding="utf-8").splitlines()
+    title = next(
+        (line[2:].strip() for line in lines if line.startswith("# ")),
+        "原子路由下超图支付通道网络的首次耗尽时间",
+    )
+    keyword_line = next(
+        (line for line in lines if line.startswith("**关键词：**")),
+        "",
+    )
+    keywords = keyword_line.removeprefix("**关键词：**").strip().replace("；", "; ")
     first = doc.sections[0]
     set_cols(first, 1)
     first.different_first_page_header_footer = True
     first.header.is_linked_to_previous = False
     first.first_page_header.paragraphs[0].text = ""
     hp = first.header.paragraphs[0]
-    hp.text = "\t[作者]等：相关超图支付通道网络的停止时间\t"
+    hp.text = f"\t[作者]等：{title}\t"
     hp.alignment = WD_ALIGN_PARAGRAPH.CENTER
 
-    lines = md_path.read_text(encoding="utf-8").splitlines()
     i = 0
     front = True
     figure_count = 0
@@ -458,6 +467,13 @@ def parse_markdown(md_path: Path, reference: Path, output: Path) -> None:
             add_inline_runs(p, line)
             i += 1
             continue
+        if line.startswith("代码仓库："):
+            p = doc.add_paragraph(style="Normal")
+            p.alignment = WD_ALIGN_PARAGRAPH.LEFT
+            p.paragraph_format.first_line_indent = Cm(0)
+            add_inline_runs(p, line)
+            i += 1
+            continue
         p_style = "Normal"
         if line == "参考文献":
             p_style = style_name(doc, "文献")
@@ -473,10 +489,10 @@ def parse_markdown(md_path: Path, reference: Path, output: Path) -> None:
         section.header_distance = Pt(49.6)
         section.footer_distance = Pt(38.25)
     core = doc.core_properties
-    core.title = "相关超图支付通道网络的停止时间"
-    core.subject = "《通信学报》格式内部审阅稿"
+    core.title = title
+    core.subject = "《通信学报》格式论文稿"
     core.author = "[待作者填写]"
-    core.keywords = "支付通道网络; 超图; 停止时间; 首次余额耗尽; 高斯相关不等式; 扩散逼近"
+    core.keywords = keywords
     doc.save(output)
     referenced_media, removed_media = remove_orphan_media(output)
     print(f"built={output}")
