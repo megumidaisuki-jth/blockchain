@@ -1,0 +1,152 @@
+{
+  "contract_date": "2026-07-28",
+  "contract_status": "PASS",
+  "exact_anchors": {
+    "all_states_reach_boundary": true,
+    "maximum_absolute_linear_system_residual": 3.186340080674199e-14,
+    "maximum_absolute_z_score": 1.3844048216802791,
+    "repetitions": [
+      100000
+    ],
+    "row_count": 3,
+    "scale": 2,
+    "state_counts": [
+      10000
+    ]
+  },
+  "figure_export": {
+    "backend": "Python/matplotlib",
+    "black_and_white_discrimination": "regime encoded redundantly by marker and line style",
+    "dpi": 600,
+    "font": "Microsoft YaHei",
+    "formats": [
+      "PNG"
+    ],
+    "height_mm": 140.0,
+    "output_path": "outputs/researchwrite/hypergraph-stopping-time/figures/fig_higher_order_cross_topology_validation.png",
+    "pixel_dimensions": [
+      4015,
+      3307
+    ],
+    "white_background": true,
+    "width_mm": 170.0
+  },
+  "figure_scope": "accepted T18 higher-order cross-topology evidence only; no experiment rerun",
+  "primary_grid": {
+    "maximum_half_width": 0.014273557137349693,
+    "paired_trajectory_count": 1080000,
+    "positive_simultaneous_intervals": 36,
+    "regimes": [
+      "balanced",
+      "negative",
+      "positive"
+    ],
+    "repetitions": [
+      30000
+    ],
+    "row_count": 36,
+    "scales": [
+      10,
+      20,
+      40,
+      80
+    ],
+    "simultaneous_multiplier": 3.1969502291312546,
+    "topologies": [
+      "chain",
+      "random",
+      "star"
+    ],
+    "topology_effect_summaries": {
+      "chain": {
+        "maximum": 0.10976761458333333,
+        "mean": 0.10579944270833332,
+        "minimum": 0.09999870833333332
+      },
+      "random": {
+        "maximum": 0.0902865,
+        "mean": 0.08579764453125,
+        "minimum": 0.07896774999999999
+      },
+      "star": {
+        "maximum": 0.030810333333333332,
+        "mean": 0.024362688368055555,
+        "minimum": 0.0157195
+      }
+    },
+    "weakest_point_estimate": {
+      "cell_id": "star-balanced-N80",
+      "ci_high": 0.02986061409231138,
+      "ci_low": 0.0015783859076886186,
+      "estimate": 0.0157195
+    }
+  },
+  "provenance": {
+    "different_seed_evidence_scope": "weakest cell star-balanced-N80 only",
+    "plotting_script_sha256": "ba1f36317e8bdb10feafea85e1ab3ca2658883cfd08d451ac09ca791d590af4b",
+    "rejected_seed_inputs_used": false,
+    "same_seed_full_recalculation_used_as_independent_replication": false,
+    "source_files": {
+      "anchor_csv": {
+        "path": "results/t18-exact-anchors/t18-exact-anchors.csv",
+        "sha256": "b9ada3e30ca5ea82e1d5bc4683f0370570c22a610868f2bfc36b8879bf54734d"
+      },
+      "anchor_manifest": {
+        "path": "results/t18-exact-anchors/SHA256SUMS.txt",
+        "sha256": "08110d4d87658b9433961a1eb022c0775f1c4adb7db12d71a7f32667006c1dd1"
+      },
+      "anchor_metadata": {
+        "path": "results/t18-exact-anchors/t18-exact-anchor-metadata.json",
+        "sha256": "6a483b31da4bd1023d49ac0a311f244e6e1597b25c6c945ec2cd8960bca1e9e2"
+      },
+      "primary_csv": {
+        "path": "results/t18-cross-topology/t18-primary-effects.csv",
+        "sha256": "d9436daa71457d3f6c58cf02767b0204a178177a9f8d4367eec94a57d6ecd234"
+      },
+      "primary_manifest": {
+        "path": "results/t18-cross-topology/SHA256SUMS.txt",
+        "sha256": "4f0ed50b7aa5ee2061305d5753ee3e1b4aa60d78424e0fd9c9745e3fabf7b808"
+      },
+      "primary_metadata": {
+        "path": "results/t18-cross-topology/t18-run-metadata.json",
+        "sha256": "e4efd9fdb7612f993aea2cff4ac63f5f3ab63b46b3dfe94d17dd14c33e93cc22"
+      },
+      "weakest_csv": {
+        "path": "results/t18-weakest-sensitivity/t18-weakest-cell-sensitivity.csv",
+        "sha256": "0b3009f557758bc392ef5a097234c3cd68bc08420d53bea15f800bb16b5abf79"
+      },
+      "weakest_manifest": {
+        "path": "results/t18-weakest-sensitivity/SHA256SUMS.txt",
+        "sha256": "5ee941d5d23a2051649be608bda9bc0e51b8385b741e25bde7e1ffc2c3414a82"
+      },
+      "weakest_metadata": {
+        "path": "results/t18-weakest-sensitivity/t18-weakest-cell-metadata.json",
+        "sha256": "9f412397091fc59fb7da720e86e50a5cd17816512b11c3ab253308e23769e9bd"
+      }
+    }
+  },
+  "weakest_cell_sensitivity": {
+    "all_interval_lower_bounds_positive": true,
+    "block_size": 1000,
+    "blocks": 100,
+    "cell_id": "star-balanced-N80",
+    "estimate": 0.022652889062500008,
+    "intervals": {
+      "block_student_t": [
+        0.014795970267519696,
+        0.03050980785748032
+      ],
+      "normal": [
+        0.01488239247553021,
+        0.030423385649469805
+      ],
+      "path_student_t": [
+        0.014882174495811723,
+        0.030423603629188292
+      ]
+    },
+    "repetitions": 100000,
+    "row_count": 1,
+    "seed": 202607189999
+  }
+}

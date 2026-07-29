@@ -88,6 +88,8 @@ def main() -> int:
         else []
     )
     references = re.findall(r"^\[(\d+)\]\s", md_text, flags=re.MULTILINE)
+    expected_reference_numbers = list(range(1, len(references) + 1))
+    expected_reference_strings = [str(value) for value in expected_reference_numbers]
     body_before_references = md_text.split("## 参考文献", 1)[0]
     citation_tokens = re.findall(r"\[([0-9]+(?:[-,][0-9]+)*)\]", body_before_references)
     citation_sequence = [number for token in citation_tokens for number in expand_citation(token)]
@@ -96,9 +98,27 @@ def main() -> int:
     check(chinese_length(title) <= 20, "中文标题不超过20字", chinese_length(title), "<=20", checks)
     check(chinese_length(abstract) <= 200, "中文摘要不超过200字", chinese_length(abstract), "<=200", checks)
     check(len(keywords) >= 4, "中文关键词不少于4个", len(keywords), ">=4", checks)
-    check(references == [str(i) for i in range(1, 28)], "参考文献连续编号", references, "1..27", checks)
-    check(first_citation_order == list(range(1, 28)), "正文首次引文顺序", first_citation_order, list(range(1, 28)), checks)
-    check(set(citation_sequence) == set(range(1, 28)), "全部参考文献均在正文引出", sorted(set(citation_sequence)), list(range(1, 28)), checks)
+    check(
+        references == expected_reference_strings,
+        "参考文献连续编号",
+        references,
+        f"1..{len(references)}",
+        checks,
+    )
+    check(
+        first_citation_order == expected_reference_numbers,
+        "正文首次引文顺序",
+        first_citation_order,
+        expected_reference_numbers,
+        checks,
+    )
+    check(
+        set(citation_sequence) == set(expected_reference_numbers),
+        "全部参考文献均在正文引出",
+        sorted(set(citation_sequence)),
+        expected_reference_numbers,
+        checks,
+    )
 
     compact_text = re.sub(r"\s+", "", md_text)
     required_fragments = {
@@ -112,9 +132,13 @@ def main() -> int:
         "T19离散相关均值": "0.933236",
         "T19离散独立均值": "0.884056239375",
         "N=3精确均值": "8.654869502436274",
-        "2026样本单元": "110400",
-        "T32总体斜率": "-0.03885738",
-        "T34穷举数": "139968",
+        "三分区双阶段样本量": "双阶段32万条轨迹",
+        "三分区阶段差异": "20个阶段差异",
+        "高阶跨拓扑36单元": "36个预设有限设计单元",
+        "高阶最弱单元效应": "0.0157195",
+        "2026设计单元": "2026年过滤投影的主阶段与异种子阶段各含16个单元",
+        "需求插值总体斜率": "-0.038857",
+        "停止索引穷举结论": r"未发现\(\rho_{\rmbal}\le\tau_N\)",
         "停止量语义边界": "不等同于现实支付失败",
     }
     for name, fragment in required_fragments.items():
@@ -258,7 +282,15 @@ def main() -> int:
     expected_column_counts = [1, 2] + [value for _ in range(full_width_artifact_count) for value in (1, 2)]
     check(len(sect_prs) == expected_section_count, "连续分节数量", len(sect_prs), expected_section_count, checks)
     check(column_counts == expected_column_counts, "单双栏分节序列", column_counts, expected_column_counts, checks)
-    check(media_suffixes == [".png", ".png"], "稿件仅嵌入两张PNG图片", media_suffixes, [".png", ".png"], checks)
+    markdown_image_count = len(re.findall(r"^!\[", md_text, flags=re.MULTILINE))
+    expected_media_suffixes = [".png"] * markdown_image_count
+    check(
+        media_suffixes == expected_media_suffixes,
+        "稿件仅嵌入Markdown声明的PNG图片",
+        media_suffixes,
+        expected_media_suffixes,
+        checks,
+    )
     check(field_count == 0, "无动态域残留", field_count, 0, checks)
     check(zip_crc_error is None, "DOCX ZIP CRC完整", zip_crc_error, None, checks)
     check(not missing_relationship_targets, "DOCX内部关系目标完整", missing_relationship_targets, [], checks)

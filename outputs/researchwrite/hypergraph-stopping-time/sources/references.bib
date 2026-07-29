@@ -6,6 +6,7 @@
   volume  = {100},
   number  = {1},
   pages   = {62--64},
+  doi     = {10.2307/2324818},
   url     = {https://www.jstor.org/stable/2324818}
 }
 
@@ -358,14 +359,15 @@
   year    = {2025},
   volume  = {4},
   number  = {4},
-  pages   = {1--14},
+  eid     = {30},
+  pages   = {30:1--30:14},
   doi     = {10.1145/3702248}
 }
 
-@misc{NainwalKambleAwathare2026COALESCE,
+@misc{NainwalKambleAwathare2025COALESCE,
   author        = {Nainwal, Ayush and Kamble, Atharva and Awathare, Nitin},
   title         = {Hypergraph based Multi-Party Payment Channel},
-  year          = {2026},
+  year          = {2025},
   eprint        = {2512.11775},
   archivePrefix = {arXiv},
   primaryClass  = {cs.DC},
@@ -394,24 +396,28 @@
   doi     = {10.1137/15M1010737}
 }
 
-@misc{VanEngelshovenRoos2020Merchant,
-  author        = {van Engelshoven, Yuup and Roos, Stefanie},
-  title         = {The Merchant: Avoiding Payment Channel Depletion through Incentives},
-  year          = {2020},
-  eprint        = {2012.10280},
-  archivePrefix = {arXiv},
-  primaryClass  = {cs.DC},
-  doi           = {10.48550/arXiv.2012.10280}
+@inproceedings{VanEngelshovenRoos2021Merchant,
+  author    = {van Engelshoven, Yuup and Roos, Stefanie},
+  title     = {The Merchant: Avoiding Payment Channel Depletion through Incentives},
+  booktitle = {2021 IEEE International Conference on Decentralized Applications and Infrastructures (DAPPS)},
+  year      = {2021},
+  pages     = {59--68},
+  publisher = {IEEE},
+  doi       = {10.1109/DAPPS52256.2021.00012},
+  note      = {Preprint: arXiv:2012.10280}
 }
 
-@misc{BaiXuWang2021Patient,
+@article{BaiXuWang2022Patient,
   author        = {Bai, Qianlan and Xu, Yuedong and Wang, Xin},
   title         = {Understanding the Benefit of Being Patient in Payment Channel Networks},
-  year          = {2021},
+  journal       = {IEEE Transactions on Network Science and Engineering},
+  year          = {2022},
+  volume        = {9},
+  number        = {3},
+  pages         = {1895--1908},
+  doi           = {10.1109/TNSE.2022.3154408},
   eprint        = {2104.02936},
-  archivePrefix = {arXiv},
-  primaryClass  = {cs.GT},
-  doi           = {10.48550/arXiv.2104.02936}
+  archivePrefix = {arXiv}
 }
 
 @misc{ShabgahiEtAl2022Lifespan,
@@ -447,6 +453,9 @@
   title     = {Horcrux: Synthesize, Split, Shift and Stay Alive; Preventing Channel Depletion via Universal and Enhanced Multi-hop Payments},
   booktitle = {Network and Distributed System Security Symposium (NDSS)},
   year      = {2025},
+  address   = {San Diego, CA},
+  publisher = {Internet Society},
+  doi       = {10.14722/NDSS.2025.230495},
   url       = {https://www.ndss-symposium.org/ndss-paper/horcrux-synthesize-split-shift-and-stay-alive-preventing-channel-depletion-via-universal-and-enhanced-multi-hop-payments/},
   note      = {Also Cryptology ePrint Archive, Paper 2024/1338}
 }
@@ -466,8 +475,11 @@
 @article{SankagiriHajek2025Pricing,
   author  = {Sankagiri, Suryanarayana and Hajek, Bruce},
   title   = {Pricing for Routing and Flow-Control in Payment Channel Networks},
-  journal = {IEEE/ACM Transactions on Networking},
+  journal = {IEEE Transactions on Networking},
   year    = {2025},
+  volume  = {33},
+  number  = {6},
+  pages   = {3455--3470},
   doi     = {10.1109/TON.2025.3588049},
   eprint  = {2502.20203},
   archivePrefix = {arXiv},
@@ -478,9 +490,13 @@
   author    = {Denisov, Denis and Sakhanenko, Alexander and Wachtel, Vitali},
   title     = {First-Passage Times for Random Walks in the Triangular Array Setting},
   booktitle = {A Lifetime of Excursions Through Random Walks and L{\'e}vy Processes},
+  editor    = {Chaumont, Lo{\"i}c and Kyprianou, Andreas E.},
+  series    = {Progress in Probability},
+  volume    = {78},
   year      = {2021},
   pages     = {181--203},
-  publisher = {Springer},
+  address   = {Cham},
+  publisher = {Birkh{\"a}user},
   doi       = {10.1007/978-3-030-83309-1_10},
   eprint    = {2005.00240},
   archivePrefix = {arXiv}
@@ -496,4 +512,63 @@
   pages   = {139--145},
   eprint  = {1408.1028},
   archivePrefix = {arXiv}
+}
+
+@misc{LightningBOLT2Pinned2026,
+  author       = {{Lightning Network Developers}},
+  title        = {{BOLT} #2: Peer Protocol for Channel Management},
+  howpublished = {Basis of Lightning Technology specification},
+  url          = {https://github.com/lightning/bolts/blob/35e79db504560b9d3494a0ed07bf1e8379c3663a/02-peer-protocol.md},
+  urldate      = {2026-07-28},
+  note         = {Repository snapshot 35e79db504560b9d3494a0ed07bf1e8379c3663a}
+}
+
+@misc{LightningBOLT4Pinned2026,
+  author       = {{Lightning Network Developers}},
+  title        = {{BOLT} #4: Onion Routing Protocol},
+  howpublished = {Basis of Lightning Technology specification},
+  url          = {https://github.com/lightning/bolts/blob/35e79db504560b9d3494a0ed07bf1e8379c3663a/04-onion-routing.md},
+  urldate      = {2026-07-28},
+  note         = {Repository snapshot 35e79db504560b9d3494a0ed07bf1e8379c3663a}
+}
+
+@misc{LightningBOLT7Pinned2026,
+  author       = {{Lightning Network Developers}},
+  title        = {{BOLT} #7: P2P Node and Channel Discovery},
+  howpublished = {Basis of Lightning Technology specification},
+  url          = {https://github.com/lightning/bolts/blob/35e79db504560b9d3494a0ed07bf1e8379c3663a/07-routing-gossip.md},
+  urldate      = {2026-07-28},
+  note         = {Repository snapshot 35e79db504560b9d3494a0ed07bf1e8379c3663a}
+}
+
+@article{ValkoMarxGomez2025Geolocated,
+  author  = {Valko, Danila and Marx G{\'o}mez, Jorge},
+  title   = {Geolocated Lightning Network Topology Snapshots: A Dataset Covering 2019--2023},
+  journal = {Scientific Data},
+  year    = {2025},
+  volume  = {12},
+  number  = {1},
+  eid     = {1939},
+  doi     = {10.1038/s41597-025-06413-7}
+}
+
+@dataset{ValkoMarxGomez2025Dataset,
+  author    = {Valko, Danila and Marx G{\'o}mez, Jorge},
+  title     = {Geolocated Lightning Network Topology Snapshots: A Dataset Covering 2019--2023},
+  publisher = {Harvard Dataverse},
+  year      = {2025},
+  version   = {V1},
+  doi       = {10.7910/DVN/2OAVO6},
+  url       = {https://doi.org/10.7910/DVN/2OAVO6},
+  urldate   = {2026-07-28}
+}
+
+@misc{MempoolLightningChannelsPinned2026,
+  author       = {{mempool open source project}},
+  title        = {Lightning Channel Geography {API} Implementation},
+  howpublished = {GitHub repository},
+  year         = {2026},
+  url          = {https://github.com/mempool/mempool/blob/e9d6cf8c042f946be53e372bb36530cd7b7851a4/backend/src/api/explorer/channels.api.ts},
+  urldate      = {2026-07-28},
+  note         = {Repository snapshot e9d6cf8c042f946be53e372bb36530cd7b7851a4; route registration at backend/src/api/explorer/channels.routes.ts; data captured from https://mempool.space/api/v1/lightning/channels-geo on 2026-07-22}
 }

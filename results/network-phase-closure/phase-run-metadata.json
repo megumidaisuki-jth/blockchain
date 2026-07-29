@@ -1,0 +1,89 @@
+{
+  "experiment_id": "network-phase-closure-20260728",
+  "pipeline_version": "1.0",
+  "contract": "outputs/researchwrite/hypergraph-stopping-time/41_phase_scaling_and_higher_order_figure_contract_2026-07-28.md",
+  "stages": [
+    "primary",
+    "replication"
+  ],
+  "stage_seed_indices": {
+    "primary": 0,
+    "replication": 1
+  },
+  "repetitions_per_cell": 8000,
+  "block_count": 40,
+  "block_size": 200,
+  "bootstrap_repetitions": 10000,
+  "amplitude": 0.4,
+  "regimes": [
+    {
+      "key": "zero",
+      "label_cn": "零漂移基线",
+      "regime_id": 0,
+      "alpha": null,
+      "scales": [
+        25,
+        50,
+        100,
+        200,
+        400
+      ],
+      "theoretical_exponent": 2.0
+    },
+    {
+      "key": "drift",
+      "label_cn": "漂移主导",
+      "regime_id": 1,
+      "alpha": 0.5,
+      "scales": [
+        100,
+        200,
+        400,
+        800,
+        1600
+      ],
+      "theoretical_exponent": 1.5
+    },
+    {
+      "key": "critical",
+      "label_cn": "临界扩散",
+      "regime_id": 2,
+      "alpha": 1.0,
+      "scales": [
+        25,
+        50,
+        100,
+        200,
+        400
+      ],
+      "theoretical_exponent": 2.0
+    },
+    {
+      "key": "fair",
+      "label_cn": "公平扩散",
+      "regime_id": 3,
+      "alpha": 2.0,
+      "scales": [
+        25,
+        50,
+        100,
+        200,
+        400
+      ],
+      "theoretical_exponent": 2.0
+    }
+  ],
+  "maximum_steps": null,
+  "simulator": "exact-zero-scan chunked i.i.d. route labels",
+  "chunk_steps": 128,
+  "censoring_allowed": false,
+  "exclusions_allowed": false,
+  "python": "3.10.16",
+  "numpy": "2.2.6",
+  "scipy": "1.15.3",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "elapsed_seconds_this_invocation": 872.939520599999,
+  "gate_pass": true,
+  "failed_gates": [],
+  "generated_utc": "2026-07-28T03:20:11Z"
+}

@@ -1,0 +1,98 @@
+{
+  "archetype": "quantitative grid with one theory-led orientation panel",
+  "contract_status": "PASS",
+  "core_conclusion": "A fixed two-triad atomic-routing kernel exhibits the prespecified finite-scale drift-dominated, critical-diffusion, and fair-diffusion morphology; the numerical figure checks rather than proves the asymptotic theorem.",
+  "data_integrity": {
+    "adjacent_slope_rows": 32,
+    "block_rows": 1600,
+    "cell_summary_rows": 40,
+    "censored_count": 0,
+    "excluded_count": 0,
+    "final_slope_rows": 8,
+    "kernel_rows": 40,
+    "nan_count": 0,
+    "pass": true,
+    "raw_cell_count": 40,
+    "sha256_manifest_entries_verified": 55,
+    "stage_comparison_rows": 20
+  },
+  "design": {
+    "amplitude": 0.4,
+    "block_count_per_cell": 40,
+    "block_size": 200,
+    "cell_count": 40,
+    "cells_per_stage": 20,
+    "maximum_steps": null,
+    "stage_count": 2,
+    "trajectories_per_cell": 8000,
+    "trajectory_count_total": 320000
+  },
+  "figure_export": {
+    "backend": "Python/matplotlib",
+    "black_and_white_discrimination": {
+      "all_colors_are_gray": true,
+      "four_unique_line_styles": true,
+      "four_unique_markers": true,
+      "stage_encoding": "filled primary markers versus open replication markers"
+    },
+    "dpi": 600,
+    "font": "Microsoft YaHei",
+    "formats": [
+      "PNG"
+    ],
+    "height_mm": 145.0,
+    "output_path": "outputs/researchwrite/hypergraph-stopping-time/figures/fig_phase_scaling_closure.png",
+    "panel_map": {
+      "a": "theoretical three-regime partition and asymptotic scale",
+      "b": "adjacent-capacity effective exponent with prespecified simultaneous intervals",
+      "c": "regime-specific normalized mean with prespecified simultaneous intervals",
+      "d": "robust relative interdecile width without inferential interval"
+    },
+    "render_qa": {
+      "bytes": 590499,
+      "checks": {
+        "embedded_dpi_within_0.1": true,
+        "grayscale_only_style_contract": true,
+        "nontrivial_file_size": true,
+        "pixel_height_within_one": true,
+        "pixel_width_within_one": true,
+        "png_signature": true,
+        "redundant_regime_encodings": true
+      },
+      "dpi": [
+        599.9988,
+        599.9988
+      ],
+      "pass": true,
+      "pixel_height": 3425,
+      "pixel_width": 4015
+    },
+    "white_background": true,
+    "width_mm": 170.0
+  },
+  "finite_scale_gates": {
+    "failed": [],
+    "independent_stage_intervals_containing_zero": 20,
+    "maximum_cell_interval_half_width": 0.02738425467061486,
+    "maximum_final_slope_interval_half_width": 0.017540193812413674,
+    "pass": true
+  },
+  "source_data": {
+    "results/network-phase-closure/SHA256SUMS.txt": "7459a28ecd1cdae370e1769b0b72c933e214694da617ac08eec1f3199e1b39b1",
+    "results/network-phase-closure/phase-adjacent-slopes.csv": "558833525f0974d655a887dfc1b543418af1b5c3e6ef6fe9c19b092d54bd267a",
+    "results/network-phase-closure/phase-block-means.csv": "a71bc05ea0f0d5fdb8b0c2140b3a549e0848e89b85b5ef8aa2d67cebcc9eb861",
+    "results/network-phase-closure/phase-cell-summaries.csv": "f6f3995f326a784640b19f4be2646fa507ecde9c6864b7ebb82b422e72497b1e",
+    "results/network-phase-closure/phase-final-three-slopes.csv": "d842e653d0f16024d5db31bef03d2b928a67d8147237671b36b5817dca216986",
+    "results/network-phase-closure/phase-gates.json": "5205f671ce987886b52641e98f02b50e7e3ac5df444067a57e490cacd48d4038",
+    "results/network-phase-closure/phase-kernel-diagnostics.csv": "105b91944a4a91359054a5de1525630c08a54bba39f4258a352eafa35a9ac347",
+    "results/network-phase-closure/phase-run-metadata.json": "9b84835e7debf6525e42ba28a44c562a76e8f57ce2e2efda6ba22a35e228d9a3",
+    "results/network-phase-closure/phase-stage-comparisons.csv": "10654c86f94366084236d04c03c1e9f60d6f261c1dd1a86ea42a50752beb8d6d"
+  },
+  "statistics": {
+    "adjacent_slope_interval": "stage-wise 16-comparison bootstrap simultaneous 95% interval, 10,000 resamples of block means",
+    "cell_interval": "20-comparison Bonferroni--Student-t simultaneous 95% interval within each stage, based on 40 non-overlapping block means",
+    "relative_interdecile_width": "(q90-q10)/(2*q50), trajectory-level quantiles",
+    "stage_comparison": "20-comparison Bonferroni--Welch simultaneous 95% interval for replication minus primary",
+    "stages_pooled": false
+  }
+}

@@ -1,0 +1,199 @@
+{
+  "experiment_id": "network-phase-closure-20260728",
+  "pipeline_version": "1.0",
+  "generated_utc": "2026-07-28T03:20:11Z",
+  "checks": [
+    {
+      "name": "deterministic_implementation",
+      "pass": true,
+      "value": 0,
+      "criterion": "all deterministic cell gates pass"
+    },
+    {
+      "name": "zero_censoring_nan_exclusion",
+      "pass": true,
+      "value": {
+        "censored": 0,
+        "nan": 0,
+        "excluded": 0
+      },
+      "criterion": "all three counts equal zero"
+    },
+    {
+      "name": "precision_primary",
+      "pass": true,
+      "value": 0.02738425467061486,
+      "criterion": "maximum 20-cell simultaneous normalized half-width <= 0.03"
+    },
+    {
+      "name": "precision_replication",
+      "pass": true,
+      "value": 0.024211119483128266,
+      "criterion": "maximum 20-cell simultaneous normalized half-width <= 0.03"
+    },
+    {
+      "name": "independent_stage_agreement",
+      "pass": true,
+      "value": 0,
+      "criterion": "all 20 Bonferroni-Welch intervals contain zero"
+    },
+    {
+      "name": "final_slope_primary_zero",
+      "pass": true,
+      "value": {
+        "point": 2.0101271435682158,
+        "half_width": 0.016227062795044822
+      },
+      "criterion": "point in [1.9,2.1] and simultaneous half-width <= 0.10"
+    },
+    {
+      "name": "final_slope_primary_drift",
+      "pass": true,
+      "value": {
+        "point": 1.5159621847142257,
+        "half_width": 0.004183676230201994
+      },
+      "criterion": "point in [1.4,1.65] and simultaneous half-width <= 0.10"
+    },
+    {
+      "name": "final_slope_primary_critical",
+      "pass": true,
+      "value": {
+        "point": 2.0053604642017455,
+        "half_width": 0.014117863210068249
+      },
+      "criterion": "point in [1.9,2.1] and simultaneous half-width <= 0.10"
+    },
+    {
+      "name": "final_slope_primary_fair",
+      "pass": true,
+      "value": {
+        "point": 2.008202008728244,
+        "half_width": 0.017540193812413674
+      },
+      "criterion": "point in [1.9,2.1] and simultaneous half-width <= 0.10"
+    },
+    {
+      "name": "final_slope_replication_zero",
+      "pass": true,
+      "value": {
+        "point": 1.9938031370834115,
+        "half_width": 0.01619616669008983
+      },
+      "criterion": "point in [1.9,2.1] and simultaneous half-width <= 0.10"
+    },
+    {
+      "name": "final_slope_replication_drift",
+      "pass": true,
+      "value": {
+        "point": 1.5185768475312573,
+        "half_width": 0.0035514110455151515
+      },
+      "criterion": "point in [1.4,1.65] and simultaneous half-width <= 0.10"
+    },
+    {
+      "name": "final_slope_replication_critical",
+      "pass": true,
+      "value": {
+        "point": 1.9879985122830568,
+        "half_width": 0.012711643543186657
+      },
+      "criterion": "point in [1.9,2.1] and simultaneous half-width <= 0.10"
+    },
+    {
+      "name": "final_slope_replication_fair",
+      "pass": true,
+      "value": {
+        "point": 2.0010035596219726,
+        "half_width": 0.015635159337629267
+      },
+      "criterion": "point in [1.9,2.1] and simultaneous half-width <= 0.10"
+    },
+    {
+      "name": "plateau_ratio_primary_zero",
+      "pass": true,
+      "value": 1.0236666700651607,
+      "criterion": "last-three normalized maximum/minimum <= 1.1"
+    },
+    {
+      "name": "plateau_ratio_primary_drift",
+      "pass": true,
+      "value": 1.0223749331238816,
+      "criterion": "last-three normalized maximum/minimum <= 1.2"
+    },
+    {
+      "name": "plateau_ratio_primary_critical",
+      "pass": true,
+      "value": 1.0087031764419865,
+      "criterion": "last-three normalized maximum/minimum <= 1.1"
+    },
+    {
+      "name": "plateau_ratio_primary_fair",
+      "pass": true,
+      "value": 1.0192123439790084,
+      "criterion": "last-three normalized maximum/minimum <= 1.1"
+    },
+    {
+      "name": "drift_center_primary",
+      "pass": true,
+      "value": 0.945227146875,
+      "criterion": "N=1600 normalized drift mean in [0.80,1.05]"
+    },
+    {
+      "name": "drift_concentration_primary",
+      "pass": true,
+      "value": 0.006875,
+      "criterion": "N=1600 probability of >30% relative deviation <= 0.25"
+    },
+    {
+      "name": "fair_to_zero_primary",
+      "pass": true,
+      "value": 0.005226520312500038,
+      "criterion": "absolute normalized mean difference at N=400 <= 0.03"
+    },
+    {
+      "name": "plateau_ratio_replication_zero",
+      "pass": true,
+      "value": 1.0127246523562448,
+      "criterion": "last-three normalized maximum/minimum <= 1.1"
+    },
+    {
+      "name": "plateau_ratio_replication_drift",
+      "pass": true,
+      "value": 1.0260874519962166,
+      "criterion": "last-three normalized maximum/minimum <= 1.2"
+    },
+    {
+      "name": "plateau_ratio_replication_critical",
+      "pass": true,
+      "value": 1.016776770304057,
+      "criterion": "last-three normalized maximum/minimum <= 1.1"
+    },
+    {
+      "name": "plateau_ratio_replication_fair",
+      "pass": true,
+      "value": 1.0023266407774127,
+      "criterion": "last-three normalized maximum/minimum <= 1.1"
+    },
+    {
+      "name": "drift_center_replication",
+      "pass": true,
+      "value": 0.9486553015625001,
+      "criterion": "N=1600 normalized drift mean in [0.80,1.05]"
+    },
+    {
+      "name": "drift_concentration_replication",
+      "pass": true,
+      "value": 0.007,
+      "criterion": "N=1600 probability of >30% relative deviation <= 0.25"
+    },
+    {
+      "name": "fair_to_zero_replication",
+      "pass": true,
+      "value": 0.0048580765625000355,
+      "criterion": "absolute normalized mean difference at N=400 <= 0.03"
+    }
+  ],
+  "passed": true,
+  "failed_checks": []
+}

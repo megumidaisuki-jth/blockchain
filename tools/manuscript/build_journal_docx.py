@@ -321,7 +321,14 @@ def remove_orphan_media(docx_path: Path) -> tuple[int, int]:
                         item,
                         rewritten_relationships.get(item.filename, source.read(item.filename)),
                     )
-    temp_path.replace(docx_path)
+    try:
+        temp_path.replace(docx_path)
+    except PermissionError:
+        # Some Windows/sandbox combinations deny an atomic replace even when the
+        # destination is writable and unopened.  A same-volume byte copy keeps
+        # the generated package identical while avoiding that platform quirk.
+        shutil.copyfile(temp_path, docx_path)
+        temp_path.unlink()
     return len(referenced), len(orphaned)
 
 
