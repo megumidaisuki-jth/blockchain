@@ -58,7 +58,7 @@ class GaussianDiscreteBridgeTests(unittest.TestCase):
         self.assertAlmostEqual(limit, 0.75, places=13)
 
     def test_published_artifacts_and_manifest_are_consistent(self):
-        output = Path(__file__).resolve().parent / "results" / "discrete-gaussian-bridge"
+        output = Path(__file__).resolve().parents[2] / "results" / "discrete-gaussian-bridge"
         with (output / "metadata.json").open(encoding="utf-8") as handle:
             metadata = json.load(handle)
         with (output / "discrete-gaussian-bridge-exact.csv").open(

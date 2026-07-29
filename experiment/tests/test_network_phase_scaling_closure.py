@@ -20,7 +20,7 @@ from network_phase_scaling_closure import (
 from network_exact import solve_exact
 
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[2]
 
 
 class FrozenPhaseContractTests(unittest.TestCase):

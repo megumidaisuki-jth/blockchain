@@ -3,14 +3,14 @@ from pathlib import Path
 import tempfile
 import unittest
 
-from plot_t18_higher_order_figure import (
+from plot_higher_order_cross_topology import (
     build_input_audit,
     default_input_paths,
     validate_and_load_inputs,
 )
 
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[2]
 
 
 class T18HigherOrderFigureTests(unittest.TestCase):

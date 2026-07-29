@@ -919,10 +919,10 @@ def _write_output_manifest(path: Path, outputs: Iterable[Path]) -> None:
 
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--project-root", type=Path, default=Path(__file__).resolve().parent)
+    parser.add_argument("--project-root", type=Path, default=Path(__file__).resolve().parent.parent)
     parser.add_argument(
         "--output-dir", type=Path,
-        default=Path(__file__).resolve().parent / "outputs" / "researchwrite" / "hypergraph-stopping-time" / "figures",
+        default=Path(__file__).resolve().parent.parent / "outputs" / "researchwrite" / "hypergraph-stopping-time" / "figures",
     )
     parser.add_argument(
         "--require-scientific-gates", action="store_true",

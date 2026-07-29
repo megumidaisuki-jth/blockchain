@@ -13,7 +13,7 @@ from lightning_sign_mechanism_closure import (
 )
 
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[2]
 RESULT = ROOT / "results" / "lightning-sign-mechanism-closure"
 
 

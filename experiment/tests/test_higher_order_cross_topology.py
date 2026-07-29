@@ -5,7 +5,7 @@ import warnings
 import numpy as np
 
 from network_topologies import overlap_chain_triads, overlap_star_triads, shortest_route_kernel
-from t18_cross_topology_validation import (
+from higher_order_cross_topology import (
     build_scenarios,
     critical_kernel,
     kernel_diagnostics,
@@ -20,7 +20,7 @@ from t18_cross_topology_validation import (
 )
 
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[2]
 
 
 class T18ScenarioTests(unittest.TestCase):

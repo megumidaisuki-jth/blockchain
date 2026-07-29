@@ -17,7 +17,7 @@ from pathlib import Path
 from typing import Iterable, Sequence
 
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parent.parent
 RESULT_DIR = ROOT / "results" / "stopping-event-mapping-validation"
 
 

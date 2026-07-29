@@ -22,7 +22,7 @@ from network_topologies import (
 )
 
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[2]
 PROJECT = ROOT / "outputs" / "researchwrite" / "hypergraph-stopping-time"
 
 

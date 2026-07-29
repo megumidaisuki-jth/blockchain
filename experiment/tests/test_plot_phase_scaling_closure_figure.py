@@ -13,7 +13,7 @@ from plot_phase_scaling_closure_figure import (
 )
 
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[2]
 
 
 class PhaseScalingClosureFigureTests(unittest.TestCase):
