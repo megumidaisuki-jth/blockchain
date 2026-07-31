@@ -1,0 +1,69 @@
+{
+  "experiment_id": "request-clock-equal-node-capital-20260731",
+  "status": "PASS",
+  "quick": false,
+  "design": {
+    "topologies": [
+      "chain",
+      "star",
+      "branch"
+    ],
+    "node_count": 9,
+    "edge_count": 4,
+    "per_node_capital_units": "4*N",
+    "network_capital_units": "36*N",
+    "scales": [
+      10,
+      20,
+      40,
+      80
+    ],
+    "ordered_pair_demand": "uniform over 72 ordered source-destination pairs",
+    "routing": "uniform over shortest hypergraph route ties",
+    "request_clock": "accepted and rejected requests both count; rejected requests do not update balances",
+    "failure_event": "first fixed-route balance rejection after first accepted request reaches zero",
+    "horizons": [
+      1,
+      9,
+      45,
+      90
+    ]
+  },
+  "sampling": {
+    "stages": [
+      "primary",
+      "replication"
+    ],
+    "repetitions_per_scale_stage": 12000,
+    "blocks_per_scale_stage_topology": 40,
+    "stage_seeds": {
+      "primary": 2026073101,
+      "replication": 2026073102
+    },
+    "maximum_requests_failure_guard": 2000000,
+    "censoring": "none permitted"
+  },
+  "statistics": {
+    "risk_family_size": 12,
+    "time_family_size": 24,
+    "stage_comparison_family_size": 36,
+    "topology_contrast_family_size": 6,
+    "familywise_alpha": 0.05,
+    "independent_unit": "one common OD/tie request stream driving all three topologies"
+  },
+  "gates": {
+    "deterministic_equal_capital_and_demand": true,
+    "zero_censoring_and_indexing_violations": true,
+    "risk_precision": true,
+    "time_precision": true,
+    "independent_stage_agreement": true,
+    "exact_p1_calibration": true,
+    "pooled_outputs_permitted": true
+  },
+  "software": {
+    "python": "3.10.16",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3"
+  },
+  "claim_boundary": "finite-design calibration of fixed-route balance rejection under unit requests; not global route unavailability and not empirical Lightning failure prediction"
+}

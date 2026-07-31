@@ -1,6 +1,6 @@
 {
   "paper": "原子路由下超图支付通道网络的首次耗尽时间",
-  "manuscript_version": "v0.7.1",
+  "manuscript_version": "v0.8.0",
   "source_files": [
     "gaussian_discrete_bridge_validation.py",
     "higher_order_cross_topology.py",
@@ -26,6 +26,8 @@
     "network_topologies.py",
     "plot_higher_order_cross_topology.py",
     "plot_phase_scaling_closure_figure.py",
+    "plot_request_clock_topology_validation.py",
+    "request_clock_topology_validation.py",
     "stopping_event_mapping_validation.py"
   ],
   "test_files": [
@@ -39,6 +41,7 @@
     "test_network_phase_scaling_closure.py",
     "test_plot_higher_order_cross_topology.py",
     "test_plot_phase_scaling_closure_figure.py",
+    "test_request_clock_topology_validation.py",
     "test_stopping_event_mapping_validation.py"
   ],
   "inputs": [
@@ -61,6 +64,14 @@
     "results/lightning-drift-interpolation-formal",
     "results/lightning-drift-interpolation-replication",
     "results/lightning-sign-mechanism-closure",
+    "results/request-clock-topology-validation",
     "results/stopping-event-mapping-validation"
+  ],
+  "figure_files": [
+    {
+      "path": "outputs/researchwrite/hypergraph-stopping-time/figures/fig_request_clock_topology_validation.png",
+      "paper_use": "图5：统一请求时钟下的触零预警与等节点资本拓扑比较",
+      "format": "PNG"
+    }
   ]
 }

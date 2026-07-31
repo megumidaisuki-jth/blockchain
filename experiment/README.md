@@ -14,13 +14,14 @@
 | 离散—高斯桥接 | `gaussian_discrete_bridge_validation.py` | 脚本内含精确链、谱级数和绘图 | 图3、6.4节 |
 | Lightning 历史/2026横截面 | `lightning_real_topology_formal.py`、`lightning_current_2026_formal.py` | `lightning_topology_mapping.py`、`lightning_mapping_simulation.py`、阶段比较与合并脚本 | 5.5节、5.6节、6.5节 |
 | 需求集中度与符号反转 | `lightning_drift_interpolation_formal.py` | `lightning_drift_interpolation_comparison.py`、`lightning_sign_mechanism_closure.py` | 图4、6.6节 |
-| 停止事件时间索引 | `stopping_event_mapping_validation.py` | 穷举核查 | 6.7节 |
+| 停止事件时间索引 | `stopping_event_mapping_validation.py` | 小容量穷举核查 | 2.5节的索引语义 |
+| 统一请求时钟与等节点资本拓扑比较 | `request_clock_topology_validation.py` | `plot_request_clock_topology_validation.py` | 表2、图5、5.7节、6.7节、7.3节 |
 
 `lightning_*_preflight.py` 保留了正式运行前的样本量和精度门设计；`lightning_*_comparison.py` 与 `lightning_pooled_sensitivity.py` 负责独立阶段比较及门限判断后的合并敏感性分析。`network_phase_validation.py` 同时提供多个实验复用的区块统计和独立代理函数。
 
 ## 环境
 
-本次归档验证使用 Python 3.12，并采用 `requirements.txt` 中记录的科学计算库版本。安装示例：
+原有归档验证使用 Python 3.12；统一请求时钟正式实验的元数据记录 Python 3.10.16、NumPy 2.2.6 和 SciPy 1.15.3。依赖以 `requirements.txt` 为准，安装示例：
 
 ```powershell
 python -m pip install -r experiment\requirements.txt
@@ -38,7 +39,7 @@ D:\miniconda\python.exe experiment\run_tests.py
 
 - 历史 Lightning 输入：`data/raw/ln-geolocated-2019-2023/selected_snapshots/`
 - 2026 Lightning 输入：`data/raw/mempool-lightning-2026-07-22/channels-geo.json`
-- 数值结果：`results/network-phase-closure/`、`results/t18-*`、`results/discrete-gaussian-bridge/`、`results/lightning-*`、`results/stopping-event-mapping-validation/`
-- 论文图：`outputs/researchwrite/hypergraph-stopping-time/figures/` 以及相应 `results/` 子目录中的 PNG
+- 数值结果：`results/network-phase-closure/`、`results/t18-*`、`results/discrete-gaussian-bridge/`、`results/lightning-*`、`results/stopping-event-mapping-validation/`、`results/request-clock-topology-validation/`
+- 论文图：`outputs/researchwrite/hypergraph-stopping-time/figures/` 以及相应 `results/` 子目录中的 PNG；本次新增图5为 `fig_request_clock_topology_validation.png`，不生成SVG、PDF或TIFF副本
 
 精确文件清单和对应论文用途见 `inventory.json`。

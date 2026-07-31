@@ -1,0 +1,4 @@
+experiment_id,topology,node_count,edge_count,coordinate_count,capacity_units_json,network_capital_units_per_scale,per_node_capital_units_per_scale_json,ordered_pair_count,maximum_absolute_drift,mean_shortest_route_hops,deterministic_gate_pass
+request-clock-equal-node-capital-20260731,chain,9,4,12,"[10,8,8,10]",36,"{""0"":4,""1"":4,""2"":4,""3"":4,""4"":4,""5"":4,""6"":4,""7"":4,""8"":4}",72,4.85722573273506e-17,2.1111111111111094,True
+request-clock-equal-node-capital-20260731,star,9,4,12,"[9,9,9,9]",36,"{""0"":4,""1"":4,""2"":4,""3"":4,""4"":4,""5"":4,""6"":4,""7"":4,""8"":4}",72,4.85722573273506e-17,1.6666666666666643,True
+request-clock-equal-node-capital-20260731,branch,9,4,12,"[10,6,10,10]",36,"{""0"":4,""1"":4,""2"":4,""3"":4,""4"":4,""5"":4,""6"":4,""7"":4,""8"":4}",72,4.85722573273506e-17,1.9999999999999996,True
